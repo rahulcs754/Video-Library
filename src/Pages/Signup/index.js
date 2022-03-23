@@ -1,5 +1,11 @@
-export const Signup  = () =>  {
+import SignupForm from "./Signup/SignupForm";
+
+const Signup = () => {
   return (
-    <div>Signup Page </div>
-  )
-}
+    <>
+      <SignupForm />
+    </>
+  );
+};
+
+export { Signup };
