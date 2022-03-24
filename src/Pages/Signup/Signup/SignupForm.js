@@ -226,7 +226,7 @@ const SignupForm = () => {
               onChange={changeHandler}
               required
             />
-            I accept all term &amp; condition
+            I accept all terms &amp; condition
           </div>
           <div className="space-between mt-m">
             <button className="btn btn-primary d-inline">
