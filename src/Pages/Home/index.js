@@ -1,5 +1,12 @@
-export const Home = () =>  {
+import { Banner } from "./Components/Banner";
+import { Category } from "./Components/Category";
+import { Footer } from "../../Components/Footer";
+export const Home = () => {
   return (
-    <div>Home Page </div>
-  )
-}
+    <>
+      <Banner />
+      <Category />
+      <Footer />
+    </>
+  );
+};

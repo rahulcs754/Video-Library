@@ -1,13 +1,124 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.banner_img {
+  background-image: url(https://res.cloudinary.com/diyo6qdy1/image/upload/v1647981100/videolib/Finalpddev_uvxwl9.png);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.home_banner {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: calc(100vh - 73px);
+  text-align: center;
+  opacity: 0.9;
+}
+
+.section_heading {
+  font-size: 1.2rem;
+}
+
+.letter-space {
+  letter-spacing: 0.1rem;
+}
+
+.arrows {
+  width: 3.75rem;
+  height: 4.5rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -1.875rem;
+  bottom: 1.25rem;
+}
+
+.arrows path {
+  stroke: var(--dark-blue);
+  fill: transparent;
+  stroke-width: 3px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+.pointer {
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .arrows {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .rs-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arrows {
+    display: none;
+  }
+
+  .home_banner {
+    height: calc(33vh - 73px);
+  }
+
+  .section_box {
+    margin: 1rem;
+  }
+
+  .header-search {
+    display: none;
+  }
+
+  .card-rs {
+    min-width: 28rem;
+  }
 }

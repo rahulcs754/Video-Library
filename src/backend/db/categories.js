@@ -8,20 +8,34 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Computer Programming",
-    description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+    categoryName: "Javascript",
+    description: "",
+    linkCategory: "/videolist",
+    image:
+      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986086/videolib/category/Js_1_tjztfc.png",
   },
   {
     _id: uuid(),
-    categoryName: "Frontend Development",
-    description:
-      "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
+    categoryName: "Node",
+    description: "",
+    linkCategory: "/videolist",
+    image:
+      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986093/videolib/category/node_1_ihy3ql.png",
   },
   {
     _id: uuid(),
-    categoryName: "Backend Development",
-    description:
-      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+    categoryName: "Python",
+    description: "",
+    linkCategory: "/videolist",
+    image:
+      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986094/videolib/category/python_1_oa0pmw.png",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Django",
+    description: "",
+    linkCategory: "/videolist",
+    image:
+      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986081/videolib/category/django_1_kko7hz.png",
   },
 ];
