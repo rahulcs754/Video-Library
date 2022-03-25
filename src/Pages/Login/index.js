@@ -1,5 +1,9 @@
-export const  Login = () =>  {
+import LoginForm from "./Components/Login";
+
+export const Login = () => {
   return (
-    <div>Login Page </div>
-  )
-}
+    <>
+      <LoginForm />
+    </>
+  );
+};
