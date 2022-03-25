@@ -1,5 +1,4 @@
-export const  VideoList = () =>  {
-  return (
-    <div>Video List Page </div>
-  )
-}
+import { VideoList } from "./Components/VideoList";
+export const Videos = () => {
+  return <VideoList />;
+};

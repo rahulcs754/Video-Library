@@ -117,6 +117,13 @@
   justify-content: space-between;
 }
 
+.video_title {
+  font-size: 1rem;
+}
+.card-info {
+  padding: 0.3rem;
+}
+
 /* menu for profile */
 
 .menu {
