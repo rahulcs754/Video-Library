@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { useAuthData } from "../../Context/AuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "./Menu";
 export const Header = () => {
   const [showmenu, setShowmenu] = useState(false);
   const { userAuth } = useAuthData();
-  const getToken = localStorage.getItem("encodedToken");
   const { isUserLoggedIn } = userAuth;
 
   return (
