@@ -1,4 +1,4 @@
-const VideoReducer = (state, action) => {
+export const VideoReducer = (state, action) => {
   switch (action.type) {
     case "ADD_VIDEO_LIST":
       return {
@@ -49,5 +49,3 @@ const VideoReducer = (state, action) => {
       return state;
   }
 };
-
-export default VideoReducer;

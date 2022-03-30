@@ -1,3 +1,4 @@
-export { useAuthData } from "./AuthContext";
-export { useVideo } from "./VideoContext";
-export { useWatchLater } from "./WatchlaterContext";
+export { useAuthData, AuthProvider } from "./AuthContext";
+export { useVideo, VideoProvider } from "./VideoContext";
+export { useWatchLater, WatchlistProvider } from "./WatchlaterContext";
+export { usePlaylist, PlaylistProvider } from "./PlaylistContext";
