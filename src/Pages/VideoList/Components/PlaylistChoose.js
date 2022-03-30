@@ -31,7 +31,7 @@ export const PlaylistChoose = ({ setView, videoIdNumber }) => {
   const saveHanlder = async (videoIdNumber, playlistId) => {
     const encodeToken = localStorage.getItem("encodedToken");
     const res = await addVideoPlaylist(playlistId, videoIdNumber, encodeToken);
-    console.log(res);
+
     playlistDispatch({
       type: "STORE_VIDEO",
       videoId: videoIdNumber,
