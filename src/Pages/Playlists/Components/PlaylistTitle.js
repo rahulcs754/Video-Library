@@ -5,8 +5,9 @@ export const PlaylistTitle = ({ _id, title }) => {
 
   const removeHandler = async (id) => {
     const encodeToken = localStorage.getItem("encodedToken");
+
     const res = await removePlaylist(id, encodeToken);
-    console.log(res);
+    console.log("remove data", res);
     playlistDispatch({ type: "REMOVE_PLAYLIST", payload: id });
   };
 

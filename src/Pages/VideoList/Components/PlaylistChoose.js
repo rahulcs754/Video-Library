@@ -26,7 +26,7 @@ export const PlaylistChoose = ({ setView, videoIdNumber }) => {
         setPlaylistdata(playlists);
       }
     })();
-  }, [playPlaylistData]);
+  }, []);
 
   const saveHanlder = async (videoIdNumber, playlistId) => {
     const encodeToken = localStorage.getItem("encodedToken");

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import { v4 as uuid } from "uuid";
 import { addPlaylist } from "../../../ApiService";
 import { usePlaylist } from "../../../Context";
@@ -11,7 +10,7 @@ export const AddplaylistForm = ({ setViewInput }) => {
   });
 
   const { name, description } = playlistFormInput;
-  const { playlistState, playlistDispatch } = usePlaylist();
+  const { playlistDispatch } = usePlaylist();
 
   const changeHandler = (e) => {
     const { name, value } = e.target;
@@ -31,12 +30,12 @@ export const AddplaylistForm = ({ setViewInput }) => {
     };
 
     const encodeToken = localStorage.getItem("encodedToken");
-    const res = await addPlaylist(newplaylist, encodeToken);
-    console.log(res);
-    if (res.status === 201 || res.status === 200) {
+    const { playlists, status } = await addPlaylist(newplaylist, encodeToken);
+
+    if (status === 201 || status === 200) {
       playlistDispatch({
         type: "ADD_PLAYLIST",
-        payload: newplaylist,
+        payload: playlists,
       });
       setViewInput((prev) => !prev);
     }

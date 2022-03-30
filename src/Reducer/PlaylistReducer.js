@@ -3,7 +3,7 @@ export const PlaylistReducer = (state, action) => {
 
   switch (action.type) {
     case "ADD_PLAYLIST":
-      return { ...state, playlists: [...state.playlists, payload] };
+      return { ...state, playlists: payload };
 
     case "STORE_VIDEO":
       const findObj = state.playlists.find((item) =>
@@ -44,8 +44,6 @@ export const PlaylistReducer = (state, action) => {
             : item
         ),
       };
-      AbstractRange;
-
     case "ERROR_SET":
       return { ...state, error: action.error, errMsg: action.errMsg };
 

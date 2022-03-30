@@ -5,13 +5,19 @@ export const VideoCart = ({ _id, author, thumnailMedium, playlistId }) => {
 
   const removeHandler = async (id, playlistId) => {
     const encodeToken = localStorage.getItem("encodedToken");
-    const res = await removeVideoFromPlaylist(playlistId, id, encodeToken);
-    console.log(res);
-    playlistDispatch({
-      type: "REMOVE_VIDEO_FROM_PLAYLIST",
-      videoId: id,
-      playlistId: playlistId,
-    });
+
+    const {
+      data: { playlist },
+      status,
+    } = await removeVideoFromPlaylist(playlistId, id, encodeToken);
+
+    if (status === 200 || status === 201) {
+      playlistDispatch({
+        type: "REMOVE_VIDEO_FROM_PLAYLIST",
+        videoId: id,
+        playlistId: playlistId,
+      });
+    }
   };
 
   return (
@@ -23,7 +29,7 @@ export const VideoCart = ({ _id, author, thumnailMedium, playlistId }) => {
       />
       <div className="card-header">
         <div className="card-title video_title space-between">
-          <span>{author}</span>{" "}
+          <span>{author}</span>
           <i
             className="far fa-trash pointer"
             onClick={() => removeHandler(_id, playlistId)}
