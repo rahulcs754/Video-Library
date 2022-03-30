@@ -7,6 +7,7 @@ import {
   WatchLater,
   Playlists,
   NoPageFound,
+  Liked,
 } from "../Pages";
 import MockAPI from "../mock-api";
 
@@ -19,6 +20,7 @@ const Routespaths = () => {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/signup" element={<Signup />}></Route>
       <Route path="/history" element={<History />}></Route>
+      <Route path="/liked" element={<Liked />}></Route>
       <Route path="/explore" element={<Videos />}></Route>
       <Route path="/playlists" element={<Playlists />}></Route>
       <Route path="/watchlater" element={<WatchLater />}></Route>

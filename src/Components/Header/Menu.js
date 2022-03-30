@@ -14,10 +14,7 @@ export const Menu = () => {
       <h3>Welcome {Firstname}</h3>
       <ul>
         <li>
-          <Link to="#">My profile</Link>
-        </li>
-        <li>
-          <Link to="#">Liked Video</Link>
+          <Link to="/liked">Liked Video</Link>
         </li>
         <li>
           <Link to="#">History</Link>
