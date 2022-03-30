@@ -1,6 +1,12 @@
 import { usePlaylist } from "../../../Context";
 import { removeVideoFromPlaylist } from "../../../ApiService";
-export const VideoCart = ({ _id, author, thumnailMedium, playlistId }) => {
+export const VideoCart = ({
+  _id,
+  title,
+  author,
+  thumnailMedium,
+  playlistId,
+}) => {
   const { playlistDispatch } = usePlaylist();
 
   const removeHandler = async (id, playlistId) => {
@@ -19,7 +25,7 @@ export const VideoCart = ({ _id, author, thumnailMedium, playlistId }) => {
       });
     }
   };
-
+  const titleSet = title.length > 20 ? title.slice(0, 20) + "..." : title;
   return (
     <div className="card card-overlay video_card">
       <img
@@ -29,7 +35,7 @@ export const VideoCart = ({ _id, author, thumnailMedium, playlistId }) => {
       />
       <div className="card-header">
         <div className="card-title video_title space-between">
-          <span>{author}</span>
+          <span>{titleSet}</span>
           <i
             className="far fa-trash pointer"
             onClick={() => removeHandler(_id, playlistId)}
