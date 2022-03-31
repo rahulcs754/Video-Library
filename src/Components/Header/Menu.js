@@ -20,7 +20,7 @@ export const Menu = () => {
           <Link to="#">History</Link>
         </li>
         <li>
-          <Link to="#">Watch Later</Link>
+          <Link to="/watchlater">Watch Later</Link>
         </li>
         <li onClick={logoutHandler}>
           <a href="#">Logout</a>
