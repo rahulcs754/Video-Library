@@ -16,6 +16,15 @@ export const Menu = () => {
         <li>
           <Link to="#">My profile</Link>
         </li>
+        <li>
+          <Link to="#">Liked Video</Link>
+        </li>
+        <li>
+          <Link to="#">History</Link>
+        </li>
+        <li>
+          <Link to="#">Watch Later</Link>
+        </li>
         <li onClick={logoutHandler}>
           <a href="#">Logout</a>
         </li>

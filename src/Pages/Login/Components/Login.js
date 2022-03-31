@@ -22,15 +22,15 @@ const LoginForm = () => {
   const { email, password, viewPassword, error } = login;
 
   // set error
-  const setError = msg => {
-    setLogin(prev => ({
+  const setError = (msg) => {
+    setLogin((prev) => ({
       ...prev,
       error: msg,
     }));
   };
 
   // submit handler
-  const submitHandler = async e => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(`/api/auth/login`, {
@@ -48,7 +48,7 @@ const LoginForm = () => {
         localStorage.setItem("encodedToken", encodedToken);
         localStorage.setItem("Firstname", foundUser.firstName);
         setError("");
-        navigate("/products");
+        navigate("/explore");
       }
     } catch (err) {
       setError("Login failed wrong user credentials");
@@ -57,18 +57,18 @@ const LoginForm = () => {
 
   // password view
   const handlerViewPassword = () => {
-    setLogin(prev => ({ ...prev, viewPassword: !prev.viewPassword }));
+    setLogin((prev) => ({ ...prev, viewPassword: !prev.viewPassword }));
   };
 
   // controlled input set
-  const changeHandler = e => {
+  const changeHandler = (e) => {
     const { name, value } = e.target;
-    setLogin(prev => ({ ...prev, [name]: value }));
+    setLogin((prev) => ({ ...prev, [name]: value }));
   };
 
   //set default entry for login
   const handlerGuestEntry = () => {
-    setLogin(prev => ({
+    setLogin((prev) => ({
       ...prev,
       email: "rahul@gmail.com",
       password: "123",

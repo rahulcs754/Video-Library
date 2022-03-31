@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuthData } from "../../Context/AuthContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu } from "./Menu";
 export const Header = () => {
   const [showmenu, setShowmenu] = useState(false);
@@ -22,7 +22,7 @@ export const Header = () => {
               </li>
 
               <li>
-                <Link to="/videolist"> Explore </Link>
+                <Link to="/explore"> Explore </Link>
               </li>
               {isUserLoggedIn ? (
                 <li>
