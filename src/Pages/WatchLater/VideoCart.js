@@ -7,14 +7,17 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
   const removeHandler = async (id) => {
     const encodeToken = localStorage.getItem("encodedToken");
 
-    const { status } = await removeWatchlater(id, encodeToken);
+    const {
+      data: { watchlater },
+      status,
+    } = await removeWatchlater(id, encodeToken);
 
     if (status === 200 || status === 201) {
       watchLaterDispatch({
-        type: "REMOVE_FROM_LIKED",
-        payload: id,
+        type: "SET_WISHLIST",
+        payload: watchlater,
       });
-      VideoDispatch({ type: "IS_LIKED", payload: id });
+      VideoDispatch({ type: "IS_WATCHLATER", payload: id });
     }
   };
   const titleSet = title.length > 20 ? title.slice(0, 20) + "..." : title;

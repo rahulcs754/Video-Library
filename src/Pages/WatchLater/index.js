@@ -11,12 +11,6 @@ export const WatchLater = () => {
     watchLaterState: { watchlater },
   } = useWatchLater();
 
-  useEffect(() => {
-    if (isUserLoggedIn === false) {
-      navigate("/login");
-    }
-  }, []);
-
   return (
     <>
       <div className="grid-container m-m">
@@ -28,9 +22,9 @@ export const WatchLater = () => {
       </div>
 
       <div className="flex flex-row m-m">
-        {watchlater &&
-          watchlater.map((item) => {
-            return <VideoCart {...item} />;
+        {watchlater !== 0 &&
+          watchlater.map((item, i) => {
+            return <VideoCart {...item} key={i} />;
           })}
       </div>
     </>
