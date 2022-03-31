@@ -36,10 +36,9 @@ export const VideoCartFooter = (videoDetails) => {
       LikeDispatch({ type: "SET_LIKES", payload: data.likes });
     }
     if (data === undefined) {
-      const removeStatus = await removeFromLikes(videoDetails._id, token);
-
-      if (removeStatus.status === 200 || removeStatus.status === 201) {
-        LikeDispatch({ type: "REMOVE_FROM_LIKED", payload: videoDetails._id });
+      const removeData = await removeFromLikes(videoDetails._id, token);
+      if (removeData.status === 200 || removeData.status === 201) {
+        LikeDispatch({ type: "SET_LIKES", payload: removeData.data.likes });
       }
     }
     VideoDispatch({ type: "IS_LIKED", payload: videoDetails._id });
