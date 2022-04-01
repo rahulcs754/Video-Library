@@ -231,6 +231,13 @@
   background-color: transparent;
 }
 
+.text_ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 0.1rem;
+}
+
 @media (max-width: 900px) {
   .arrows {
     display: none;

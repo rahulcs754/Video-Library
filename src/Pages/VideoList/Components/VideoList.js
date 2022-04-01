@@ -12,9 +12,6 @@ export const VideoList = () => {
             ListOFVideo.map((item, i) => {
               const { _id, title, likes, views, thumnailMedium } = item;
 
-              const titleSet =
-                title.length > 30 ? title.slice(0, 30) + "..." : title;
-
               return (
                 <div className="card card-overlay" key={i}>
                   <img
@@ -24,7 +21,9 @@ export const VideoList = () => {
                   />
 
                   <div className="card-header">
-                    <div className="card-title video_title">{titleSet}</div>
+                    <div className="card-title video_title text_ellipsis">
+                      {title}
+                    </div>
                   </div>
                   <div className="card-info">
                     <p>{views} views</p>
