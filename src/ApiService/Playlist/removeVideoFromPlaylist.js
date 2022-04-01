@@ -7,7 +7,6 @@ export const removeVideoFromPlaylist = async (playlistId, videoId, token) => {
         headers: { authorization: token },
       }
     );
-
     if (status === 200 || status === 201) {
       return { error: 0, status, data };
     }
