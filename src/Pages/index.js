@@ -4,6 +4,7 @@ import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { Videos } from "./VideoList";
 import { WatchLater } from "./WatchLater";
+import { Liked } from "./Liked";
 import { Playlists } from "./Playlists";
 import { NoPageFound } from "./Error";
 
@@ -16,4 +17,5 @@ export {
   WatchLater,
   NoPageFound,
   Playlists,
+  Liked,
 };

@@ -3,13 +3,16 @@ import {
   AuthProvider,
   WatchlistProvider,
   PlaylistProvider,
+  LikedProvider,
 } from "../Context";
 const AllProvider = ({ children }) => {
   return (
     <AuthProvider>
       <VideoProvider>
         <PlaylistProvider>
-          <WatchlistProvider>{children}</WatchlistProvider>
+          <LikedProvider>
+            <WatchlistProvider>{children}</WatchlistProvider>
+          </LikedProvider>
         </PlaylistProvider>
       </VideoProvider>
     </AuthProvider>

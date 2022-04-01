@@ -10,7 +10,7 @@ export const VideoList = () => {
         <div className="flex flex-row flex-center gap-sm product_list_container">
           {ListOFVideo &&
             ListOFVideo.map((item, i) => {
-              const { _id, title, likes, views, thumnailMedium } = item;
+              const { title, likes, views, thumnailMedium } = item;
 
               return (
                 <div className="card card-overlay" key={i}>

@@ -10,16 +10,6 @@ export const VideoReducer = (state, action) => {
         ...state,
         videoCategory: action.payload,
       };
-    case "IS_DISLIKED":
-      return {
-        ...state,
-        data: state.data.map((item) =>
-          item._id === action.payload
-            ? { ...item, likes: item.likes - 1, isDisliked: !item.isDisliked }
-            : item
-        ),
-        data: { ...state.data },
-      };
 
     case "IS_LIKED":
       return {
