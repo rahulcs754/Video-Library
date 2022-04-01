@@ -1,11 +1,16 @@
-import { VideoProvider } from "../Context/VideoContext";
-import { AuthProvider } from "../Context/AuthContext";
-import { WatchlistProvider } from "../Context/WatchlaterContext";
+import {
+  VideoProvider,
+  AuthProvider,
+  WatchlistProvider,
+  PlaylistProvider,
+} from "../Context";
 const AllProvider = ({ children }) => {
   return (
     <AuthProvider>
       <VideoProvider>
-        <WatchlistProvider>{children}</WatchlistProvider>
+        <PlaylistProvider>
+          <WatchlistProvider>{children}</WatchlistProvider>
+        </PlaylistProvider>
       </VideoProvider>
     </AuthProvider>
   );

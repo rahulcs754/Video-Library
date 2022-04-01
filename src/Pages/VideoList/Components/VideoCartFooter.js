@@ -1,7 +1,10 @@
 import { useAuthData, useVideo, useWatchLater } from "../../../Context/";
 import { useNavigate } from "react-router-dom";
+import { PlaylistChoose } from "./PlaylistChoose";
+import { useState } from "react";
 
 export const VideoCartFooter = ({ _id, isWatchlist, isDisliked, isLiked }) => {
+  const [selectPlaylist, setSelectPlaylist] = useState(false);
   const navigate = useNavigate();
   const { userAuth } = useAuthData();
   const { VideoDispatch } = useVideo();
@@ -18,9 +21,6 @@ export const VideoCartFooter = ({ _id, isWatchlist, isDisliked, isLiked }) => {
   const likeHandler = (id) => {
     VideoDispatch({ type: "IS_LIKED", payload: id });
   };
-  const dislikeHandler = (id) => {
-    VideoDispatch({ type: "IS_DISLIKED", payload: id });
-  };
 
   return (
     <>
@@ -34,14 +34,15 @@ export const VideoCartFooter = ({ _id, isWatchlist, isDisliked, isLiked }) => {
           </button>
 
           <i
-            className={` fa fa-thumbs-up ${isLiked ? "text-warning" : ""} `}
+            className={` fa fa-thumbs-up pointer ${
+              isLiked ? "text-warning" : ""
+            } `}
             onClick={() => likeHandler(_id)}
           ></i>
+
           <i
-            className={` fa fa-thumbs-down ${
-              isDisliked ? "text-warning" : ""
-            } `}
-            onClick={() => dislikeHandler(_id)}
+            className="far fa-bookmark pointer"
+            onClick={() => setSelectPlaylist((prev) => !prev)}
           ></i>
         </>
       ) : (
@@ -54,12 +55,14 @@ export const VideoCartFooter = ({ _id, isWatchlist, isDisliked, isLiked }) => {
           </button>
 
           <i className="fa fa-thumbs-up" onClick={() => navigate("/login")}></i>
-          <i
-            className="fa fa-thumbs-down"
-            onClick={() => navigate("/login")}
-          ></i>
+
+          <i className="far fa-bookmark" onClick={() => navigate("/login")}></i>
         </>
       )}
+
+      {selectPlaylist ? (
+        <PlaylistChoose setView={setSelectPlaylist} videoIdNumber={_id} />
+      ) : null}
     </>
   );
 };

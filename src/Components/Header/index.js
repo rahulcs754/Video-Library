@@ -26,7 +26,7 @@ export const Header = () => {
               </li>
               {isUserLoggedIn ? (
                 <li>
-                  <Link to="/">Playlist </Link>
+                  <Link to="/playlists">Playlist </Link>
                 </li>
               ) : null}
               <li>

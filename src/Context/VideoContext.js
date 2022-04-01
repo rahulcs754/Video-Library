@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import VideoReducer from "../Reducer/VideoReducer";
+import { VideoReducer } from "../Reducer/VideoReducer";
 
 import { useEffect } from "react";
 
