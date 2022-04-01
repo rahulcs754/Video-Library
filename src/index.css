@@ -231,7 +231,6 @@
   background-color: transparent;
 }
 
-<<<<<<< HEAD
 /*single video page css*/
 iframe#widget2 {
   height: 444px;
@@ -256,13 +255,13 @@ iframe#widget2 {
 
 .right_button_part {
   flex-basis: 30%;
-=======
+}
+
 .text_ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   padding: 0 0.1rem;
->>>>>>> 510aff6e088de93b0ff669416c6d1f85bf7486e6
 }
 
 @media (max-width: 900px) {
