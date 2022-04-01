@@ -30,12 +30,14 @@ export const VideoCartFooter = (videoDetails) => {
 
   const likeHandler = async (videoDetails) => {
     const token = localStorage.getItem("encodedToken");
+    //api calls
     const { data, status } = await addLikes(videoDetails, token);
 
     if (status === 200 || status === 201) {
       LikeDispatch({ type: "SET_LIKES", payload: data.likes });
     }
     if (data === undefined) {
+      //api calls
       const removeData = await removeFromLikes(videoDetails._id, token);
       if (removeData.status === 200 || removeData.status === 201) {
         LikeDispatch({ type: "SET_LIKES", payload: removeData.data.likes });
