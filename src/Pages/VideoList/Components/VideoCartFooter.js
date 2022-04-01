@@ -146,19 +146,6 @@ export const VideoCartFooter = (videoDetails) => {
       {selectPlaylist ? (
         <PlaylistChoose setView={setSelectPlaylist} videoIdNumber={_id} />
       ) : null}
-
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
     </>
   );
 };

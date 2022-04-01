@@ -1,5 +1,6 @@
 import { removeFromLikes } from "../../ApiService/Liked";
 import { useLike, useVideo } from "../../Context";
+import { ToastContainer, toast } from "react-toastify";
 export const VideoCart = ({ _id, title, thumnailMedium }) => {
   const { VideoDispatch } = useVideo();
   const { LikeDispatch } = useLike();
@@ -10,10 +11,21 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
     const { status } = await removeFromLikes(id, encodeToken);
 
     if (status === 200 || status === 201) {
+      toast.warning("Remove video from the Liked Videos List", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
       LikeDispatch({
         type: "REMOVE_FROM_LIKED",
         payload: id,
       });
+
       VideoDispatch({ type: "IS_LIKED", payload: id });
     }
   };

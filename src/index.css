@@ -233,10 +233,13 @@
 
 /*single video page css*/
 iframe#widget2 {
-  min-height: 27rem;
+  height: 444px;
+}
+.video_watch_left {
+  height: 600px;
 }
 
-.video_Watch_right {
+.video_watch_right {
   border: 1px solid var(--light-black);
   min-width: 41%;
 }

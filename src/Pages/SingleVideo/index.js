@@ -5,8 +5,8 @@ import YouTube from "react-youtube";
 import { PlaylistChoose } from "../VideoList/Components/PlaylistChoose";
 import { addLikes, removeFromLikes } from "../../ApiService/Liked";
 import { addWatchlater, removeWatchlater } from "../../ApiService";
-
-import { ToastContainer, toast } from "react-toastify";
+import ReactPlayer from "react-player";
+import { toast } from "react-toastify";
 
 export const SingleVideo = () => {
   const [selectPlaylist, setSelectPlaylist] = useState(false);
@@ -23,14 +23,6 @@ export const SingleVideo = () => {
   const chooseVideo = ListOFVideo.find((item) => item._id === videoid);
 
   const RelatedVideo = ListOFVideo.slice(0, 5);
-
-  const opts = {
-    height: "600",
-    width: "800",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
 
   const addWatchLaterHandler = async (videoDetails) => {
     // add to watchlater using context
@@ -113,17 +105,22 @@ export const SingleVideo = () => {
     VideoDispatch({ type: "IS_LIKED", payload: videoDetails._id });
   };
 
+  const opts = {
+    height: "600",
+    width: "800",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
   return (
     <div className="video_watch m-m flex flex-row">
       {chooseVideo ? (
         <>
-          <div className="video_Watch_left mr-l">
+          <div className="video_watch_left  mr-l">
             <YouTube videoId={chooseVideo.videoId} opts={opts} />
             <div className="video_watch_footer flex flex-row space-between align-item">
-              <div className="f-s video_left_text">
-                <strong className="text-primary">Title: </strong>
-                {chooseVideo.title}
-              </div>
+              <div className="f-m video_left_text">{chooseVideo.title}</div>
               <div className="right_button_part flex flex-row space-between align-item">
                 {isUserLoggedIn ? (
                   <>
@@ -185,19 +182,6 @@ export const SingleVideo = () => {
           videoIdNumber={chooseVideo._id}
         />
       ) : null}
-
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
     </div>
   );
 };
