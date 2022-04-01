@@ -232,11 +232,13 @@
 }
 
 /*single video page css*/
-iframe#widget2 {
-  height: 444px;
+
+.video_watch_left div div iframe {
+  min-height: 26rem;
 }
+
 .video_watch_left {
-  height: 600px;
+  height: 27rem;
 }
 
 .video_watch_right {

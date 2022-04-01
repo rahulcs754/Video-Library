@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuthData, useVideo, useWatchLater, useLike } from "../../Context";
-import YouTube from "react-youtube";
 import { PlaylistChoose } from "../VideoList/Components/PlaylistChoose";
 import { addLikes, removeFromLikes } from "../../ApiService/Liked";
 import { addWatchlater, removeWatchlater } from "../../ApiService";
@@ -117,8 +116,14 @@ export const SingleVideo = () => {
     <div className="video_watch m-m flex flex-row">
       {chooseVideo ? (
         <>
-          <div className="video_watch_left  mr-l">
-            <YouTube videoId={chooseVideo.videoId} opts={opts} />
+          <div>
+            <div className="video_watch_left  mr-l">
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${chooseVideo.videoId}`}
+                width="800px"
+                height="400px"
+              />
+            </div>
             <div className="video_watch_footer flex flex-row space-between align-item">
               <div className="f-m video_left_text">{chooseVideo.title}</div>
               <div className="right_button_part flex flex-row space-between align-item">
