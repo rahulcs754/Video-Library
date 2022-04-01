@@ -35,7 +35,6 @@ export const VideoCart = ({
       });
     }
   };
-  const titleSet = title.length > 20 ? title.slice(0, 20) + "..." : title;
   return (
     <div className="card card-overlay video_card">
       <img
@@ -45,7 +44,7 @@ export const VideoCart = ({
       />
       <div className="card-header">
         <div className="card-title video_title space-between">
-          <span>{titleSet}</span>
+          <span className="text_ellipsis">{title}</span>
           <i
             className="far fa-trash pointer"
             onClick={() => removeHandler(_id, playlistId)}

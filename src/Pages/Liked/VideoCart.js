@@ -8,7 +8,10 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
   const removeHandler = async (id) => {
     const encodeToken = localStorage.getItem("encodedToken");
 
-    const { status } = await removeFromLikes(id, encodeToken);
+    const {
+      data: { likes },
+      status,
+    } = await removeFromLikes(id, encodeToken);
 
     if (status === 200 || status === 201) {
       toast.warning("Remove video from the Liked Videos List", {
@@ -22,8 +25,8 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
       });
 
       LikeDispatch({
-        type: "REMOVE_FROM_LIKED",
-        payload: id,
+        type: "SET_LIKES",
+        payload: likes,
       });
 
       VideoDispatch({ type: "IS_LIKED", payload: id });
