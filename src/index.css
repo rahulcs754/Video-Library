@@ -231,6 +231,29 @@
   background-color: transparent;
 }
 
+/*single video page css*/
+iframe#widget2 {
+  min-height: 27rem;
+}
+
+.video_Watch_right {
+  border: 1px solid var(--light-black);
+  min-width: 41%;
+}
+
+.video_hz_card {
+  min-width: 35rem;
+}
+
+.video_left_text {
+  flex-basis: 70%;
+  text-overflow: ellipsis;
+}
+
+.right_button_part {
+  flex-basis: 30%;
+}
+
 @media (max-width: 900px) {
   .arrows {
     display: none;

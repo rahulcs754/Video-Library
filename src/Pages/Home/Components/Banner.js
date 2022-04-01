@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const Banner = () => {
   return (
     <div className="home_banner banner_img">
@@ -8,7 +9,9 @@ export const Banner = () => {
       <p className="bg-warning mb-s letter-space">
         Solve all your problems at one place with this video library.
       </p>
-      <button className="btn btn-primary">EXPLORE</button>
+      <Link to="/expore" className="btn btn-primary">
+        EXPLORE
+      </Link>
       <svg className="arrows">
         <path className="a1" d="M0 0 L30 32 L60 0"></path>
         <path className="a2" d="M0 20 L30 52 L60 20"></path>

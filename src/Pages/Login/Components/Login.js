@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthData } from "../../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from "react-toastify";
 const LoginForm = () => {
   const navigate = useNavigate();
 
@@ -47,11 +47,27 @@ const LoginForm = () => {
         });
         localStorage.setItem("encodedToken", encodedToken);
         localStorage.setItem("Firstname", foundUser.firstName);
-        setError("");
+        toast.success("Login Successfully", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         navigate("/explore");
       }
     } catch (err) {
-      setError("Login failed wrong user credentials");
+      toast.success("Login failed wrong user credentials", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 

@@ -1,5 +1,6 @@
 import { useVideo } from "../../../Context";
 import { VideoCartFooter } from "./VideoCartFooter";
+import { Link } from "react-router-dom";
 export const VideoList = () => {
   const { VideoState } = useVideo();
   const { data: ListOFVideo } = VideoState;
@@ -10,22 +11,24 @@ export const VideoList = () => {
         <div className="flex flex-row flex-center gap-sm product_list_container">
           {ListOFVideo &&
             ListOFVideo.map((item, i) => {
-              const { title, likes, views, thumnailMedium } = item;
+              const { _id, title, likes, views, thumnailMedium } = item;
 
               const titleSet =
                 title.length > 30 ? title.slice(0, 30) + "..." : title;
 
               return (
                 <div className="card card-overlay" key={i}>
-                  <img
-                    src={thumnailMedium.url}
-                    className="card-image img-c"
-                    alt="Card-Image"
-                  />
+                  <Link to={`/watch/${_id}`}>
+                    <img
+                      src={thumnailMedium.url}
+                      className="card-image img-c"
+                      alt="Card-Image"
+                    />
 
-                  <div className="card-header">
-                    <div className="card-title video_title">{titleSet}</div>
-                  </div>
+                    <div className="card-header">
+                      <div className="card-title video_title">{titleSet}</div>
+                    </div>
+                  </Link>
                   <div className="card-info">
                     <p>{views} views</p>
                     <p>{likes} likes</p>

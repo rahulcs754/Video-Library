@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { usePlaylist } from "../../../Context";
 import { getPlaylist, addVideoPlaylist } from "../../../ApiService";
+import { ToastContainer, toast } from "react-toastify";
 export const PlaylistChoose = ({ setView, videoIdNumber }) => {
   const [playlistFormInput, setPlaylistFormInput] = useState({
     name: "",
@@ -37,7 +38,17 @@ export const PlaylistChoose = ({ setView, videoIdNumber }) => {
       videoId: videoIdNumber,
       playlistId: playlistId,
     });
+
     setView((prev) => !prev);
+    toast.success("Add video to the Custom Playlist List", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
@@ -67,6 +78,18 @@ export const PlaylistChoose = ({ setView, videoIdNumber }) => {
           </ul>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

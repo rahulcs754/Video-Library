@@ -1,21 +1,10 @@
-import { Home } from "./Home";
-import { History } from "./History";
-import { Login } from "./Login";
-import { Signup } from "./Signup";
-import { Videos } from "./VideoList";
-import { WatchLater } from "./WatchLater";
-import { Liked } from "./Liked";
-import { Playlists } from "./Playlists";
-import { NoPageFound } from "./Error";
-
-export {
-  Home,
-  History,
-  Login,
-  Signup,
-  Videos,
-  WatchLater,
-  NoPageFound,
-  Playlists,
-  Liked,
-};
+export { Home } from "./Home";
+export { History } from "./History";
+export { Login } from "./Login";
+export { Signup } from "./Signup";
+export { Videos } from "./VideoList";
+export { WatchLater } from "./WatchLater";
+export { Liked } from "./Liked";
+export { Playlists } from "./Playlists";
+export { NoPageFound } from "./Error";
+export { SingleVideo } from "./SingleVideo";
