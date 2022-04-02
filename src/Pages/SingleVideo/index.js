@@ -21,7 +21,9 @@ export const SingleVideo = () => {
   const { data: ListOFVideo } = VideoState;
   const chooseVideo = ListOFVideo.find((item) => item._id === videoid);
 
-  const RelatedVideo = ListOFVideo.slice(0, 5);
+  const RelatedVideo = ListOFVideo.filter(
+    (item) => item.category === chooseVideo.category
+  ).slice(0, 5);
 
   const addWatchLaterHandler = async (videoDetails) => {
     // add to watchlater using context
