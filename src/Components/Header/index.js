@@ -22,7 +22,7 @@ export const Header = () => {
               </li>
 
               <li>
-                <Link to="/explore"> Explore </Link>
+                <Link to="/explore/all"> Explore </Link>
               </li>
               {isUserLoggedIn ? (
                 <li>
