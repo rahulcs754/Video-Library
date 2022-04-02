@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { PlaylistChoose } from "./PlaylistChoose";
 import { useState } from "react";
 import { addLikes, removeFromLikes } from "../../../ApiService/Liked";
+import { addWatchlater, removeWatchlater } from "../../../ApiService";
 
 export const VideoCartFooter = (videoDetails) => {
   const { _id, isWatchlist, isLiked } = videoDetails;
@@ -16,16 +17,39 @@ export const VideoCartFooter = (videoDetails) => {
   const { userAuth } = useAuthData();
   const { VideoDispatch } = useVideo();
   const { isUserLoggedIn } = userAuth;
-  const { watchLaterDispatch } = useWatchLater();
+  const {
+    watchLaterDispatch,
+    watchLaterState: { watchlater },
+  } = useWatchLater();
   const {
     LikeDispatch,
     LikeState: { liked },
   } = useLike();
 
-  const clickHandler = (id) => {
+  const addWatchLaterHandler = async (videoDetails) => {
     // add to watchlater using context
-    watchLaterDispatch({ type: "ADD_TO_WATCHLIST", payload: id });
-    VideoDispatch({ type: "IS_WATCHLATER", payload: id });
+    const token = localStorage.getItem("encodedToken");
+    const { data, status } = await addWatchlater(videoDetails, token);
+    if (status === 200 || status === 201) {
+      watchLaterDispatch({
+        type: "SET_WATCHLATER",
+        payload: data.watchlater,
+      });
+    }
+    if (data === undefined) {
+      const {
+        status: removeStatuse,
+        data: { watchlater },
+      } = await removeWatchlater(videoDetails._id, token);
+      if (removeStatuse === 200 || removeStatuse === 201) {
+        watchLaterDispatch({
+          type: "SET_WATCHLATER",
+          payload: watchlater,
+        });
+      }
+    }
+
+    VideoDispatch({ type: "IS_WATCHLATER", payload: videoDetails._id });
   };
 
   const likeHandler = async (videoDetails) => {
@@ -50,9 +74,9 @@ export const VideoCartFooter = (videoDetails) => {
         <>
           <button
             className={`btn btn-primary`}
-            onClick={() => clickHandler(_id)}
+            onClick={() => addWatchLaterHandler(videoDetails)}
           >
-            {isWatchlist ? "Added  Watch Later" : "Watch Later"}
+            {isWatchlist ? "Remove From Watch Later" : "Add To Watch Later"}
           </button>
 
           <i

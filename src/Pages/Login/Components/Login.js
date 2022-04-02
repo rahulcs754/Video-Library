@@ -48,7 +48,7 @@ const LoginForm = () => {
         localStorage.setItem("encodedToken", encodedToken);
         localStorage.setItem("Firstname", foundUser.firstName);
         setError("");
-        navigate("/explore");
+        navigate("/explore/all");
       }
     } catch (err) {
       setError("Login failed wrong user credentials");

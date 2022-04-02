@@ -3,7 +3,7 @@ import { WatchlistReducer } from "../Reducer/WatchlistReducer";
 const WatchlaterContext = createContext();
 
 const intialValues = {
-  watchLater: [],
+  watchlater: [],
   loading: false,
   error: "",
 };
