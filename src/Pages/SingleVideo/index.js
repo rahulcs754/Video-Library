@@ -1,9 +1,15 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useAuthData, useVideo, useWatchLater, useLike } from "../../Context";
+import {
+  useAuthData,
+  useVideo,
+  useWatchLater,
+  useLike,
+  useHistory,
+} from "../../Context";
 import { PlaylistChoose } from "../VideoList/Components/PlaylistChoose";
 import { addLikes, removeFromLikes } from "../../ApiService/Liked";
-import { addWatchlater, removeWatchlater } from "../../ApiService";
+import { addWatchlater, removeWatchlater, addHistory } from "../../ApiService";
 import ReactPlayer from "react-player";
 import { toast } from "react-toastify";
 
@@ -15,6 +21,8 @@ export const SingleVideo = () => {
   const { VideoDispatch } = useVideo();
   const { watchLaterDispatch } = useWatchLater();
   const { LikeDispatch } = useLike();
+  const { HistoryDispatch } = useHistory();
+  const navigate = useNavigate();
 
   const { videoid } = useParams();
   const { VideoState } = useVideo();
@@ -25,8 +33,8 @@ export const SingleVideo = () => {
     (item) => item.category === chooseVideo.category
   ).slice(0, 5);
 
+  //add video watchlater list
   const addWatchLaterHandler = async (videoDetails) => {
-    // add to watchlater using context
     const token = localStorage.getItem("encodedToken");
     //call api service
     const { data, status } = await addWatchlater(videoDetails, token);
@@ -71,8 +79,10 @@ export const SingleVideo = () => {
     VideoDispatch({ type: "IS_WATCHLATER", payload: videoDetails._id });
   };
 
+  // Add video to liked video
   const likeHandler = async (videoDetails) => {
     const token = localStorage.getItem("encodedToken");
+    //call api to add  video in liked list
     const { data, status } = await addLikes(videoDetails, token);
 
     if (status === 200 || status === 201) {
@@ -106,12 +116,16 @@ export const SingleVideo = () => {
     VideoDispatch({ type: "IS_LIKED", payload: videoDetails._id });
   };
 
-  const opts = {
-    height: "600",
-    width: "800",
-    playerVars: {
-      autoplay: 0,
-    },
+  // add video to history page
+  const addHistoryHandler = async (item) => {
+    navigate(`/watch/${item._id}`);
+    const encodeToken = localStorage.getItem("encodedToken");
+
+    const { history, status } = await addHistory(item, encodeToken);
+
+    if (status === 200 || status === 201) {
+      HistoryDispatch({ type: "SET_HISTORY", payload: history });
+    }
   };
 
   return (
@@ -158,9 +172,10 @@ export const SingleVideo = () => {
             <h3 className="mb-m">Related Video </h3>
             <>
               {RelatedVideo &&
-                RelatedVideo.map(({ _id, thumnailDefault, title }) => {
+                RelatedVideo.map((item) => {
+                  const { _id, thumnailDefault, title } = item;
                   return (
-                    <Link to={`/watch/${_id}`}>
+                    <div onClick={() => addHistoryHandler(item)} key={_id}>
                       <div className="card card-rs mb-s video_hz_card">
                         <div className="card-part-horizontal">
                           <div className="card-img-horizontal">
@@ -175,7 +190,7 @@ export const SingleVideo = () => {
                           </div>
                         </div>
                       </div>
-                    </Link>
+                    </div>
                   );
                 })}
             </>

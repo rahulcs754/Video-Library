@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { usePlaylist } from "../../../Context";
 import { getPlaylist, addVideoPlaylist } from "../../../ApiService";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 export const PlaylistChoose = ({ setView, videoIdNumber }) => {
   const [playlistFormInput, setPlaylistFormInput] = useState({
     name: "",
@@ -78,18 +78,6 @@ export const PlaylistChoose = ({ setView, videoIdNumber }) => {
           </ul>
         </div>
       </div>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
     </div>
   );
 };

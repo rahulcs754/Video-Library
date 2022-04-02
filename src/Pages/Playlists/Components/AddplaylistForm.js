@@ -29,11 +29,29 @@ export const AddplaylistForm = ({ setViewInput }) => {
       videos: [],
     };
 
-    const encodeToken = localStorage.getItem("encodedToken");
-    const { playlists, status } = await addPlaylist(newplaylist, encodeToken);
+    if (name !== "" && description !== "") {
+      const encodeToken = localStorage.getItem("encodedToken");
+      const { playlists, status } = await addPlaylist(newplaylist, encodeToken);
 
-    if (status === 201 || status === 200) {
-      toast.success("Add video to the Custom Playlist List", {
+      if (status === 201 || status === 200) {
+        toast.success("Add video to the Custom Playlist List", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+
+        playlistDispatch({
+          type: "ADD_PLAYLIST",
+          payload: playlists,
+        });
+        setViewInput((prev) => !prev);
+      }
+    } else {
+      toast.warning("Please fill both fields", {
         position: "bottom-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -42,12 +60,6 @@ export const AddplaylistForm = ({ setViewInput }) => {
         draggable: true,
         progress: undefined,
       });
-
-      playlistDispatch({
-        type: "ADD_PLAYLIST",
-        payload: playlists,
-      });
-      setViewInput((prev) => !prev);
     }
   };
 

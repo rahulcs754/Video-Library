@@ -4,6 +4,7 @@ export const videos = [
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "C_R6dvU4820",
     title: "Coding with JS 1: Getting Started",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -26,12 +27,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 162,
-    views: 463,
+    likes: 311,
+    views: 164,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "wLtwrYBwD7E",
     title: "Coding with JS 2: Event Listeners",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -54,12 +56,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 775,
-    views: 214,
+    likes: 464,
+    views: 315,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "QyJW1yJvwqg",
     title: "Coding with JS 3: Reading from input in html",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -82,12 +85,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 577,
-    views: 463,
+    likes: 64,
+    views: 393,
   },
   {
-    _id: "6c5db843-638c-4573-a9d7-7c701f5e3733",
+    _id: uuid(),
     category: "javascript",
+    videoId: "2vtYq6wjBXo",
     title: "Coding with JS 4: Writing to DOM",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -110,12 +114,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 291,
-    views: 420,
+    likes: 229,
+    views: 87,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "SLwdkFczQNA",
     title: "Coding with JS 5: Arrays & Objects",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -138,12 +143,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 700,
-    views: 856,
+    likes: 180,
+    views: 858,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "vSQnpxfS9W8",
     title: "Coding with JS 6: Processing Data on User Action",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -166,12 +172,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 263,
-    views: 28,
+    likes: 483,
+    views: 414,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "amTn4KB4RL8",
     title: "Coding with JS 7:  Templating in JavaScript",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -194,12 +201,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 419,
-    views: 402,
+    likes: 467,
+    views: 7,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "G7FUyJ__iI4",
     title: "Coding with JS 8: generating HTML from JavaScript",
     description:
       "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
@@ -222,12 +230,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 254,
-    views: 342,
+    likes: 874,
+    views: 524,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "274lJxMHgAs",
     title: "vanillaJS IX: Using Bootstrap to style the app",
     description:
       "Bootstrap is one of the most used CSS framework. The app is almost ready but the design needs some work. In this lesson we explore the Bootstrap website and some of the things it provides.",
@@ -250,12 +259,13 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 500,
-    views: 627,
+    likes: 349,
+    views: 652,
   },
   {
     _id: uuid(),
     category: "javascript",
+    videoId: "VG9fkzzhqOs",
     title: "vanillaJS X: Understanding Bootstrap and Design Walkthrough",
     description:
       "The new look is powered by Bootstrap and this does look good. What are the components which we are using? How are they placed? What do the tags mean? This lesson delves deeper into Bootstrap 4 and how we are going to use it.\n\nBelow is the gist as promised. Thanks for the reminder comment :)\nhttps://gist.github.com/tanaypratap/441a46b738459a713d154e7c1d0cc861",
@@ -278,10 +288,9 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 181,
-    views: 316,
+    likes: 258,
+    views: 387,
   },
-
   {
     _id: uuid(),
     category: "node",
@@ -314,11 +323,11 @@ export const videos = [
 
   {
     _id: uuid(),
-    category: "Something",
+    category: "node",
     videoId: "X1_HA0Ts_0o",
     title: "My javascript code is not working ?",
     description:
-      "error that come when run javascript code : My javascript code is not working solution for that : // example 1 ...",
+      "error that come when run javascript code : My javascript code is not working solution.",
     thumnailMedium: {
       url: "https://i.ytimg.com/vi/X1_HA0Ts_0o/mqdefault.jpg",
       width: 320,
@@ -343,7 +352,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "extension",
+    category: "node",
     videoId: "7UT2hINdsGU",
     title: "Refused to execute inline event handler in chrome extension",
     description:
@@ -598,24 +607,26 @@ export const videos = [
     likes: 117,
     views: 72,
   },
+
   {
     _id: uuid(),
     category: "react",
-    title: "Coding with JS 1: Getting Started",
+    videoId: "dN15USae2ik",
+    title: "ReactJS for Absolute Beginners",
     description:
-      "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
+      "If you're new to ReactJS, this is the live session for you. We'll have workshop, quizzes and exercises together and before you know you would have learned React!\n\nSlides are here: https://slides.com/tanaypratap/reactjs-live#/\n\nFollow on Instagram for daily quizzes: https://instagram.com/tanaypratap\n\nThe community of coders who are doing these courses is here:\nhttps://www.facebook.com/groups/328710937827045\n\nHere is the live doc we used with all the links:\nhttp://bit.ly/tanay-react-workshop-1-notes",
     thumnailMedium: {
-      url: "https://i.ytimg.com/vi/C_R6dvU4820/mqdefault.jpg",
+      url: "https://i.ytimg.com/vi/dN15USae2ik/mqdefault.jpg",
       width: 320,
       height: 180,
     },
     thumnailDefault: {
-      url: "https://i.ytimg.com/vi/C_R6dvU4820/default.jpg",
+      url: "https://i.ytimg.com/vi/dN15USae2ik/default.jpg",
       width: 120,
       height: 90,
     },
     thumnailHigh: {
-      url: "https://i.ytimg.com/vi/C_R6dvU4820/hqdefault.jpg",
+      url: "https://i.ytimg.com/vi/dN15USae2ik/hqdefault.jpg",
       width: 480,
       height: 360,
     },
@@ -623,27 +634,28 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 177,
-    views: 106,
+    likes: 856,
+    views: 377,
   },
   {
     _id: uuid(),
     category: "react",
-    title: "Coding with JS 2: Event Listeners",
+    videoId: "9pRhkECs1rM",
+    title: "Revision Session for ReactJS Beginners",
     description:
-      "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
+      "This is just a revision session\n\nHere are the live notes: https://codepen.io/tanaypratap/pen/NWKOjQz?editors=0010",
     thumnailMedium: {
-      url: "https://i.ytimg.com/vi/wLtwrYBwD7E/mqdefault.jpg",
+      url: "https://i.ytimg.com/vi/9pRhkECs1rM/mqdefault.jpg",
       width: 320,
       height: 180,
     },
     thumnailDefault: {
-      url: "https://i.ytimg.com/vi/wLtwrYBwD7E/default.jpg",
+      url: "https://i.ytimg.com/vi/9pRhkECs1rM/default.jpg",
       width: 120,
       height: 90,
     },
     thumnailHigh: {
-      url: "https://i.ytimg.com/vi/wLtwrYBwD7E/hqdefault.jpg",
+      url: "https://i.ytimg.com/vi/9pRhkECs1rM/hqdefault.jpg",
       width: 480,
       height: 360,
     },
@@ -651,27 +663,28 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 664,
-    views: 313,
+    likes: 318,
+    views: 173,
   },
   {
     _id: uuid(),
     category: "react",
-    title: "Coding with JS 3: Reading from input in html",
+    videoId: "BqPoQCCJ_Ds",
+    title: "Props and Components for ReactJS Beginners",
     description:
-      "Learn programming by doing and making things. This way you will learn things you use and there's no textbook needed to get started. Make an app in pure Javascript with this course.\nvanillaJS is Javascript without frameworks or libraries. More and more developers depends on abstractions provided by JQuery, React, Angular etc. This makes them dependent and binds them into that ecosystem. This also sometimes increase the bundle size for small apps.\nThis course aims to free you from these dependencies.\n\nI am doing this all in my time after office, if you like it please show some love by liking the videos, posting some comments. This fuels my motivation to be honest! \nAnd.. Don't forget to subscribe the channel!!\n\nFollow tanaypratap on Instagram:\nhttps://www.instagram.com/tanaypratap/\n\nOr, if you're a twitter person:\nhttps://twitter.com/tanaypratap\n\nShare your progress or ask your doubts on the FB community:\nhttp://bit.ly/metastartup-fb\n\n\nMozilla Docs ::  Should be your goto place for anything Javascript\nhttps://developer.mozilla.org/en-US/",
+      "Live notes here\nhttps://codepen.io/tanaypratap/post/forms-and-props-react-3\n\nProps are extremely useful in React. Data passes from parent to child using props. Props are required even more as you don't want to put logic in all components. So, you pass logic via event handlers using props too! \nIt makes the code look better and easier to understand. It also introduces molecularity in code. If you want to redesign/refactor tomorrow it's much easier to work on individual components.",
     thumnailMedium: {
-      url: "https://i.ytimg.com/vi/QyJW1yJvwqg/mqdefault.jpg",
+      url: "https://i.ytimg.com/vi/BqPoQCCJ_Ds/mqdefault.jpg",
       width: 320,
       height: 180,
     },
     thumnailDefault: {
-      url: "https://i.ytimg.com/vi/QyJW1yJvwqg/default.jpg",
+      url: "https://i.ytimg.com/vi/BqPoQCCJ_Ds/default.jpg",
       width: 120,
       height: 90,
     },
     thumnailHigh: {
-      url: "https://i.ytimg.com/vi/QyJW1yJvwqg/hqdefault.jpg",
+      url: "https://i.ytimg.com/vi/BqPoQCCJ_Ds/hqdefault.jpg",
       width: 480,
       height: 360,
     },
@@ -679,43 +692,15 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 702,
-    views: 762,
+    likes: 219,
+    views: 741,
   },
   {
     _id: uuid(),
-    category: "node",
+    category: "react",
+    videoId: "mIW_8dMQaUk",
     title:
-      "🔴 #1: Introduction to Node JS in Hindi | Node.JS Tutorial for Beginners ",
-    description:
-      "Welcome, to node js tutorial for beginners . In our first node js series, we will see what is nodejs? History of node js.",
-    thumnailMedium: {
-      url: "https://i.ytimg.com/vi/IIpiLZGTWuo/mqdefault.jpg",
-      width: 320,
-      height: 180,
-    },
-    thumnailDefault: {
-      url: "https://i.ytimg.com/vi/IIpiLZGTWuo/default.jpg",
-      width: 120,
-      height: 90,
-    },
-    thumnailHigh: {
-      url: "https://i.ytimg.com/vi/IIpiLZGTWuo/hqdefault.jpg",
-      width: 480,
-      height: 360,
-    },
-    author: "Thapa Technical",
-    isWatechList: false,
-    isLiked: false,
-    isDisliked: false,
-    likes: 616,
-    views: 937,
-  },
-  {
-    _id: uuid(),
-    category: "node",
-    title:
-      "Node.JS #2: Install Node JS, NPM, VS Code IDE & Running our First Node.JS Script ",
+      "Node.JS #2: Install Node JS, NPM, VS Code IDE & Running our First Node.JS Script",
     description:
       "Welcome, we will see how to install node js in our local system, also vs code editor, and runs our first node.js script.",
     thumnailMedium: {
@@ -737,16 +722,17 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 358,
-    views: 789,
+    likes: 265,
+    views: 203,
   },
   {
     _id: uuid(),
-    category: "node",
+    category: "react",
+    videoId: "aW9Zv2q7T1s",
     title:
-      "🔴 NodeJS #3: Prerequisites For Node.JS | What you should Learn Before Node.JS ",
+      "🔴 NodeJS #3: Prerequisites For Node.JS | What you should Learn Before Node.JS",
     description:
-      "Welcome, Prerequisites to Learn Node.JS | What you should Learn Before Node.JS .\nBefore start learning any new languages (In our case NodeJS), it is always better to first learn all the important topics or languages from which the NodeJS actually come into existence.",
+      "Welcome, Prerequisites to Learn Node.JS | What you should Learn Before Node.JS.\nBefore start learning any new languages (In our case NodeJS), it is always better to first learn all the important topics or languages from which the NodeJS actually come into existence.",
     thumnailMedium: {
       url: "https://i.ytimg.com/vi/aW9Zv2q7T1s/mqdefault.jpg",
       width: 320,
@@ -766,16 +752,17 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 508,
-    views: 254,
+    likes: 473,
+    views: 375,
   },
   {
     _id: uuid(),
-    category: "node",
+    category: "react",
+    videoId: "uJOsl4x7pAo",
     title:
       "Node.JS #4: 📑 Complete REPL in NodeJS | READ, Eval, Print & Loop in NodeJS",
     description:
-      "Welcome, what is REPL in Node.JS in Hindi in 2020. So, REPL stands for Read Eval Print Loop and it represents a computer environment like a Windows console or Unix/Linux shell where a command is entered and the system responds with output in an interactive mode. ",
+      "Welcome, what is REPL in Node.JS in Hindi in 2020. So, REPL stands for Read Eval Print Loop and it represents a computer environment like a Windows console or Unix/Linux shell where a command is entered and the system responds with output in an interactive mode.",
     thumnailMedium: {
       url: "https://i.ytimg.com/vi/uJOsl4x7pAo/mqdefault.jpg",
       width: 320,
@@ -795,16 +782,17 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 77,
-    views: 631,
+    likes: 922,
+    views: 147,
   },
   {
     _id: uuid(),
-    category: "node",
+    category: "react",
+    videoId: "5uZDLL0zaWg",
     title:
       "🔴 #5: Mastering the Node.js Core Modules | File System Node.js Module",
     description:
-      "Welcome, on how to master the node.js core modules . There are many core modules in Node.js. We will see Node.js File System Modules ",
+      "Welcome, on how to master the node.js core modules in Hindi. There are many core modules in Node.js. We will see Node.js File System Modules.",
     thumnailMedium: {
       url: "https://i.ytimg.com/vi/5uZDLL0zaWg/mqdefault.jpg",
       width: 320,
@@ -824,16 +812,16 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 42,
-    views: 987,
+    likes: 458,
+    views: 161,
   },
   {
     _id: uuid(),
-    category: "node",
-    title:
-      "🔴 Node.JS Challenge #1: CRUD Operations using FS Module in NodeJS ",
+    category: "react",
+    videoId: "0F-nudTm5EU",
+    title: "🔴 Node.JS Challenge #1: CRUD Operations using FS Module in NodeJS",
     description:
-      "Welcome, to the First NodeJS Challenge video on CRUD Operations using FS Module in NodeJS . ",
+      "Welcome, to the First NodeJS Challenge video on CRUD Operations using FS Module in NodeJS.",
     thumnailMedium: {
       url: "https://i.ytimg.com/vi/0F-nudTm5EU/mqdefault.jpg",
       width: 320,
@@ -853,16 +841,17 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 328,
-    views: 425,
+    likes: 33,
+    views: 581,
   },
   {
     _id: uuid(),
-    category: "node",
+    category: "react",
+    videoId: "CgEZYq7A9xU",
     title:
-      "#7: Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously ",
+      "#7: Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously.",
     description:
-      "Welcome, What is Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously ",
+      "Welcome, What is Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously.",
     thumnailMedium: {
       url: "https://i.ytimg.com/vi/CgEZYq7A9xU/mqdefault.jpg",
       width: 320,
@@ -882,7 +871,7 @@ export const videos = [
     isWatechList: false,
     isLiked: false,
     isDisliked: false,
-    likes: 217,
-    views: 81,
+    likes: 333,
+    views: 865,
   },
 ];
