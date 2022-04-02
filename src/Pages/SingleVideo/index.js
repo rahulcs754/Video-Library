@@ -27,11 +27,7 @@ export const SingleVideo = () => {
   const { videoid } = useParams();
   const { VideoState } = useVideo();
   const { data: ListOFVideo } = VideoState;
-  const chooseVideo = ListOFVideo.find((item) => item._id === videoid);
-
-  const RelatedVideo = ListOFVideo.filter(
-    (item) => item.category === chooseVideo.category
-  ).slice(0, 5);
+  const chooseVideo = ListOFVideo?.find((item) => item._id === videoid);
 
   //add video watchlater list
   const addWatchLaterHandler = async (videoDetails) => {
@@ -132,16 +128,18 @@ export const SingleVideo = () => {
     <div className="video_watch m-m flex flex-row">
       {chooseVideo ? (
         <>
-          <div>
-            <div className="video_watch_left  mr-l">
+          <div className="video_watch_left  mr-l">
+            <div className="video_player_react">
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${chooseVideo.videoId}`}
-                width="800px"
+                width="100%"
                 height="400px"
+                controls="true"
               />
             </div>
-            <div className="video_watch_footer flex flex-row space-between align-item">
-              <div className="f-m video_left_text">{chooseVideo.title}</div>
+
+            <div className="video_watch_details flex flex-row space-between align-item">
+              <div className="video_left_text">{chooseVideo.title}</div>
               <div className="right_button_part flex flex-row space-between align-item">
                 {isUserLoggedIn ? (
                   <>
@@ -166,34 +164,9 @@ export const SingleVideo = () => {
                   </>
                 ) : null}
               </div>
+              <div className="width-100">Author:{chooseVideo.author}</div>
+              <div className="d-display">{chooseVideo.description}</div>
             </div>
-          </div>
-          <div className="video_Watch_right p-m">
-            <h3 className="mb-m">Related Video </h3>
-            <>
-              {RelatedVideo &&
-                RelatedVideo.map((item) => {
-                  const { _id, thumnailDefault, title } = item;
-                  return (
-                    <div onClick={() => addHistoryHandler(item)} key={_id}>
-                      <div className="card card-rs mb-s video_hz_card">
-                        <div className="card-part-horizontal">
-                          <div className="card-img-horizontal">
-                            <img
-                              src={thumnailDefault.url}
-                              className="card-image-hr"
-                              alt="video images"
-                            />
-                          </div>
-                          <div className="card-header-horizontal">
-                            <div className="f-s">{title}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-            </>
           </div>
         </>
       ) : null}
