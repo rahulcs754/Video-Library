@@ -14,7 +14,7 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
 
     if (status === 200 || status === 201) {
       watchLaterDispatch({
-        type: "SET_WISHLIST",
+        type: "SET_WATCHLATER",
         payload: watchlater,
       });
       VideoDispatch({ type: "IS_WATCHLATER", payload: id });
