@@ -7,7 +7,6 @@ export const VideoList = () => {
   const { data: ListOFVideo } = VideoState;
   const { category } = useParams();
 
-  console.log(ListOFVideo);
   let filterCategoryWise =
     category === "all"
       ? ListOFVideo
