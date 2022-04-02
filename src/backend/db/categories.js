@@ -10,7 +10,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "Javascript",
     description: "",
-    linkCategory: "/videolist",
+    linkCategory: "/explore/javascript",
     image:
       "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986086/videolib/category/Js_1_tjztfc.png",
   },
@@ -18,7 +18,7 @@ export const categories = [
     _id: uuid(),
     categoryName: "Node",
     description: "",
-    linkCategory: "/videolist",
+    linkCategory: "/explore/node",
     image:
       "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986093/videolib/category/node_1_ihy3ql.png",
   },
@@ -26,16 +26,16 @@ export const categories = [
     _id: uuid(),
     categoryName: "Python",
     description: "",
-    linkCategory: "/videolist",
+    linkCategory: "/explore/python",
     image:
       "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986094/videolib/category/python_1_oa0pmw.png",
   },
   {
     _id: uuid(),
-    categoryName: "Django",
+    categoryName: "React",
     description: "",
-    linkCategory: "/videolist",
+    linkCategory: "/explore/react",
     image:
-      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986081/videolib/category/django_1_kko7hz.png",
+      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1648878781/videolib/category/react_2_ouunfv.png",
   },
 ];

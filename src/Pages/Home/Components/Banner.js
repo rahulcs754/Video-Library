@@ -9,7 +9,7 @@ export const Banner = () => {
       <p className="bg-warning mb-s letter-space">
         Solve all your problems at one place with this video library.
       </p>
-      <Link to="/expore" className="btn btn-primary">
+      <Link className="btn btn-primary" to="/explore/all">
         EXPLORE
       </Link>
       <svg className="arrows">

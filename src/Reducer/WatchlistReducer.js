@@ -1,6 +1,6 @@
 export const WatchlistReducer = (state, action) => {
   switch (action.type) {
-    case "SET_WISHLIST":
+    case "SET_WATCHLATER":
       return {
         ...state,
         watchlater: action.payload,

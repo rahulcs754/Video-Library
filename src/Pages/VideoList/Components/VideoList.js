@@ -1,17 +1,22 @@
 import { useVideo } from "../../../Context";
 import { VideoCartFooter } from "./VideoCartFooter";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 export const VideoList = () => {
   const { VideoState } = useVideo();
   const { data: ListOFVideo } = VideoState;
+  const { category } = useParams();
 
+  let filterCategoryWise =
+    category === "all"
+      ? ListOFVideo
+      : ListOFVideo.filter((item) => item.category === category);
   return (
     <>
       <div className="col-10 col-md-10 col-lg-10 ml-l mt-l">
         <div className="flex flex-row flex-center gap-sm product_list_container">
-          {ListOFVideo &&
-            ListOFVideo.map((item, i) => {
-              const { _id, title, likes, views, thumnailMedium } = item;
+          {filterCategoryWise &&
+            filterCategoryWise.map((item, i) => {
+              const { title, likes, views, thumnailMedium } = item;
 
               return (
                 <div className="card card-overlay" key={i}>

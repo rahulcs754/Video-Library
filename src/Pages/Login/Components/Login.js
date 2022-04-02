@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthData } from "../../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const LoginForm = () => {
   const navigate = useNavigate();
 
@@ -56,7 +56,7 @@ const LoginForm = () => {
           draggable: true,
           progress: undefined,
         });
-        navigate("/explore");
+        navigate("/explore/all");
       }
     } catch (err) {
       toast.success("Login failed wrong user credentials", {

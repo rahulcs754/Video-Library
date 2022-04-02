@@ -33,7 +33,7 @@ export const VideoCartFooter = (videoDetails) => {
     const { data, status } = await addWatchlater(videoDetails, token);
     if (status === 200 || status === 201) {
       watchLaterDispatch({
-        type: "SET_WISHLIST",
+        type: "SET_WATCHLATER",
         payload: data.watchlater,
       });
       toast.success("Add video to the Watch Later list", {
@@ -52,7 +52,7 @@ export const VideoCartFooter = (videoDetails) => {
       } = await removeWatchlater(videoDetails._id, token);
       if (removeStatuse === 200 || removeStatuse === 201) {
         watchLaterDispatch({
-          type: "SET_WISHLIST",
+          type: "SET_WATCHLATER",
           payload: watchlater,
         });
       }
