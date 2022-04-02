@@ -1,5 +1,6 @@
 import { removeWatchlater } from "../../ApiService";
 import { useWatchLater, useVideo } from "../../Context";
+import { toast } from "react-toastify";
 export const VideoCart = ({ _id, title, thumnailMedium }) => {
   const { VideoDispatch } = useVideo();
   const { watchLaterDispatch } = useWatchLater();
@@ -13,6 +14,15 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
     } = await removeWatchlater(id, encodeToken);
 
     if (status === 200 || status === 201) {
+      toast.warning("Remove video from the Watch later Videos List", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       watchLaterDispatch({
         type: "SET_WATCHLATER",
         payload: watchlater,
@@ -20,7 +30,6 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
       VideoDispatch({ type: "IS_WATCHLATER", payload: id });
     }
   };
-  const titleSet = title.length > 20 ? title.slice(0, 20) + "..." : title;
   return (
     <div className="card card-overlay video_card">
       <img
@@ -30,7 +39,7 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
       />
       <div className="card-header">
         <div className="card-title video_title space-between">
-          <span>{titleSet}</span>
+          <span className="e">{title}</span>
           <i
             className="far fa-trash pointer"
             onClick={() => removeHandler(_id)}
