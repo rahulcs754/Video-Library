@@ -47,8 +47,8 @@ export const History = () => {
   return (
     <>
       <div className="grid-container m-m">
-        <div className="space-between">
-          <strong className="mr-m f-m">History Videos: {history.length}</strong>
+        <div className="space-between align-item">
+          <strong className="mr-m ">History: {history.length}</strong>
           <button className="btn btn-primary" onClick={clearHandler}>
             Clear History
           </button>

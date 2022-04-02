@@ -11,13 +11,17 @@ export const WatchLater = () => {
     watchLaterState: { watchlater },
   } = useWatchLater();
 
+  useEffect(() => {
+    if (isUserLoggedIn === false) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <>
       <div className="grid-container m-m">
         <div className="space-between">
-          <strong className="mr-m">
-            Watch later Videos: {watchlater.length}
-          </strong>
+          <strong className="mr-m">Watch Later: {watchlater.length}</strong>
         </div>
       </div>
 

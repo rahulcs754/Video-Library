@@ -38,8 +38,8 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
         alt="Card-Image"
       />
       <div className="card-header">
-        <div className="card-title video_title space-between">
-          <span className="e">{title}</span>
+        <div className="card-title video_title space-between align-item">
+          <span className="text_ellipsis">{title}</span>
           <i
             className="far fa-trash pointer"
             onClick={() => removeHandler(_id)}
