@@ -7,6 +7,7 @@ export const VideoList = () => {
   const { data: ListOFVideo } = VideoState;
   const { category } = useParams();
 
+  console.log(ListOFVideo);
   let filterCategoryWise =
     category === "all"
       ? ListOFVideo
@@ -17,7 +18,7 @@ export const VideoList = () => {
         <div className="flex flex-row flex-center gap-sm product_list_container">
           {filterCategoryWise &&
             filterCategoryWise.map((item, i) => {
-              const { title, likes, views, thumnailMedium } = item;
+              const { _id, title, likes, views, thumnailMedium } = item;
 
               return (
                 <div className="card card-overlay" key={i}>
