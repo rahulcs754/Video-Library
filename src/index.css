@@ -242,13 +242,15 @@
 }
 .video_watch_left {
   height: inherit;
+  flex-basis: 50rem;
 }
+
 .video_watch_details {
   margin-bottom: 0.5rem;
 }
 
 .video_watch_right {
-  flex: 1 1;
+  flex-basis: 30rem;
 }
 
 .video_player_react {
@@ -260,7 +262,6 @@
 }
 
 .video_left_text {
-  flex-basis: 70%;
   text-overflow: ellipsis;
   font-size: 1.3rem;
 }

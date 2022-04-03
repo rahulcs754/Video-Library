@@ -19,15 +19,7 @@ export const VideoCart = ({
     } = await removeVideoFromPlaylist(playlistId, id, encodeToken);
 
     if (status === 200 || status === 201) {
-      toast.warning("Remove video from the Custom Playlist List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Remove video from the Custom Playlist List");
       playlistDispatch({
         type: "REMOVE_VIDEO_FROM_PLAYLIST",
         videoId: id,

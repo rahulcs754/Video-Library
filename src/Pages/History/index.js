@@ -27,15 +27,7 @@ export const History = () => {
     const { history, status } = await removeHistory(id, token);
     if (status === 200 || status === 201) {
       HistoryDispatch({ type: "SET_HISTORY", payload: history });
-      toast.warning("Remove video from history list", {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Remove video from history list");
     }
   };
 

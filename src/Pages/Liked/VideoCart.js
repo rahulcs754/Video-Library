@@ -14,15 +14,7 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
     } = await removeFromLikes(id, encodeToken);
 
     if (status === 200 || status === 201) {
-      toast.warning("Remove video from the Liked Videos List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Remove video from the Liked Videos List");
 
       LikeDispatch({
         type: "SET_LIKES",

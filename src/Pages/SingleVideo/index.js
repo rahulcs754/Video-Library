@@ -39,15 +39,7 @@ export const SingleVideo = () => {
         type: "SET_WISHLIST",
         payload: data.watchlater,
       });
-      toast.success("Add video to the Watch Later list", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.success("Add video to the Watch Later list");
     }
     if (data === undefined) {
       const {
@@ -61,15 +53,7 @@ export const SingleVideo = () => {
         });
       }
 
-      toast.warning("Remove video from the Watch Later List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Remove video from the Watch Later List");
     }
 
     VideoDispatch({ type: "IS_WATCHLATER", payload: videoDetails._id });
@@ -83,30 +67,14 @@ export const SingleVideo = () => {
 
     if (status === 200 || status === 201) {
       LikeDispatch({ type: "SET_LIKES", payload: data.likes });
-      toast.success("Add video to the Liked Videos List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.success("Add video to the Liked Videos List");
     }
     if (data === undefined) {
       const removeStatus = await removeFromLikes(videoDetails._id, token);
 
       if (removeStatus.status === 200 || removeStatus.status === 201) {
         LikeDispatch({ type: "REMOVE_FROM_LIKED", payload: videoDetails._id });
-        toast.warning("Remove video from the Liked Videos List", {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.warning("Remove video from the Liked Videos List");
       }
     }
     VideoDispatch({ type: "IS_LIKED", payload: videoDetails._id });
@@ -139,7 +107,10 @@ export const SingleVideo = () => {
             </div>
 
             <div className="video_watch_details flex flex-row space-between align-item">
-              <div className="video_left_text">{chooseVideo.title}</div>
+              <div className="video_left_text width-100">
+                {chooseVideo.title}
+              </div>
+              <div className="width-100">Author:{chooseVideo.author}</div>
               <div className="right_button_part flex flex-row space-between align-item">
                 {isUserLoggedIn ? (
                   <>
@@ -164,9 +135,10 @@ export const SingleVideo = () => {
                   </>
                 ) : null}
               </div>
-              <div className="width-100">Author:{chooseVideo.author}</div>
-              <div className="d-display">{chooseVideo.description}</div>
             </div>
+          </div>
+          <div className="video_watch_right  mr-l">
+            <span className="f-m">Note Here Come</span>
           </div>
         </>
       ) : null}

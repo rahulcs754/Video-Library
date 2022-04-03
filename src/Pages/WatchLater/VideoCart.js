@@ -14,15 +14,7 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
     } = await removeWatchlater(id, encodeToken);
 
     if (status === 200 || status === 201) {
-      toast.warning("Remove video from the Watch later Videos List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Remove video from the Watch later Videos List");
       watchLaterDispatch({
         type: "SET_WATCHLATER",
         payload: watchlater,

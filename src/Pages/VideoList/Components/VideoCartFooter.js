@@ -9,7 +9,7 @@ import { PlaylistChoose } from "./PlaylistChoose";
 import { useState } from "react";
 import { addLikes, removeFromLikes } from "../../../ApiService/Liked";
 import { addWatchlater, removeWatchlater } from "../../../ApiService";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 export const VideoCartFooter = (videoDetails) => {
   const { _id, isWatchlist, isLiked } = videoDetails;
@@ -36,14 +36,7 @@ export const VideoCartFooter = (videoDetails) => {
         type: "SET_WATCHLATER",
         payload: data.watchlater,
       });
-      toast.success("Add video to the Watch Later list", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
+      toast.success("Add video to the Watch Later list");
     }
     if (data === undefined) {
       const {
@@ -56,15 +49,7 @@ export const VideoCartFooter = (videoDetails) => {
           payload: watchlater,
         });
       }
-      toast.warning("Remove video from the Watch Later List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warning("Remove video from the Watch Later List");
     }
 
     VideoDispatch({ type: "IS_WATCHLATER", payload: videoDetails._id });
@@ -76,30 +61,14 @@ export const VideoCartFooter = (videoDetails) => {
 
     if (status === 200 || status === 201) {
       LikeDispatch({ type: "SET_LIKES", payload: data.likes });
-      toast.success("Add video to the Liked Videos List", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.success("Add video to the Liked Videos List");
     }
     if (data === undefined) {
       const removeStatus = await removeFromLikes(videoDetails._id, token);
 
       if (removeStatus.status === 200 || removeStatus.status === 201) {
         LikeDispatch({ type: "REMOVE_FROM_LIKED", payload: videoDetails._id });
-        toast.warning("Remove video from the Liked Videos List", {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.warning("Remove video from the Liked Videos List");
       }
     }
     VideoDispatch({ type: "IS_LIKED", payload: videoDetails._id });
