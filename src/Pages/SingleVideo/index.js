@@ -94,7 +94,7 @@ export const SingleVideo = () => {
 
   return (
     <div className="video_watch m-m flex flex-row">
-      {chooseVideo ? (
+      {chooseVideo !== "" ? (
         <>
           <div className="video_watch_left  mr-l">
             <div className="video_player_react">
@@ -141,7 +141,9 @@ export const SingleVideo = () => {
             <span className="f-m">Note Here Come</span>
           </div>
         </>
-      ) : null}
+      ) : (
+        <div className="loader"></div>
+      )}
 
       {selectPlaylist ? (
         <PlaylistChoose

@@ -29,7 +29,7 @@ export const VideoList = () => {
     <>
       <div className="col-10 col-md-10 col-lg-10 ml-l mt-l">
         <div className="flex flex-row flex-center gap-sm product_list_container">
-          {filterCategoryWise &&
+          {filterCategoryWise.length > 0 ? (
             filterCategoryWise.map((item, i) => {
               const { _id, title, likes, views, thumnailMedium } = item;
 
@@ -57,7 +57,10 @@ export const VideoList = () => {
                   </div>
                 </div>
               );
-            })}
+            })
+          ) : (
+            <div className="loader"></div>
+          )}
         </div>
       </div>
     </>

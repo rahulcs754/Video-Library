@@ -29,10 +29,12 @@
 ### Project Pages
 
 1. Home Page
-2. Product Listing - Page with Filters by Price Category Ratings with functionality
-3. Cart Management with functionality
-4. Wishlist Management with functionality
-5. Authentication - login | logout | signup
+2. Video Listing
+3. Liked Video Page
+4. Watchlater Page
+5. Playlist Page
+6. History Page
+7. Authentication - login | logout | signup
 
 ### How to Install and Run the Project
 

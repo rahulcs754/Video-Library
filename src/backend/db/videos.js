@@ -697,7 +697,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "react",
+    category: "node",
     videoId: "mIW_8dMQaUk",
     title:
       "Node.JS #2: Install Node JS, NPM, VS Code IDE & Running our First Node.JS Script",
@@ -727,7 +727,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "react",
+    category: "node",
     videoId: "aW9Zv2q7T1s",
     title:
       "🔴 NodeJS #3: Prerequisites For Node.JS | What you should Learn Before Node.JS",
@@ -757,7 +757,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "react",
+    category: "node",
     videoId: "uJOsl4x7pAo",
     title:
       "Node.JS #4: 📑 Complete REPL in NodeJS | READ, Eval, Print & Loop in NodeJS",
@@ -787,7 +787,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "react",
+    category: "node",
     videoId: "5uZDLL0zaWg",
     title:
       "🔴 #5: Mastering the Node.js Core Modules | File System Node.js Module",
@@ -817,7 +817,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "react",
+    category: "node",
     videoId: "0F-nudTm5EU",
     title: "🔴 Node.JS Challenge #1: CRUD Operations using FS Module in NodeJS",
     description:
@@ -846,7 +846,7 @@ export const videos = [
   },
   {
     _id: uuid(),
-    category: "react",
+    category: "node",
     videoId: "CgEZYq7A9xU",
     title:
       "#7: Node.JS Asynchronous File System Core Modules | Reading and Writing File Asynchronously.",
