@@ -275,6 +275,9 @@
 .right_button_part {
   flex-basis: 30%;
 }
+.btn {
+  font-size: 1.1rem;
+}
 
 @media (max-width: 900px) {
   .arrows {
