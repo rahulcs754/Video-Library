@@ -14,6 +14,7 @@ import ReactPlayer from "react-player";
 import { toast } from "react-toastify";
 
 export const SingleVideo = () => {
+  const [isLoader, setLoader] = useState(true);
   const [selectPlaylist, setSelectPlaylist] = useState(false);
   const {
     userAuth: { isUserLoggedIn },
@@ -91,59 +92,58 @@ export const SingleVideo = () => {
       HistoryDispatch({ type: "SET_HISTORY", payload: history });
     }
   };
+  const onloaded = () => {
+    setLoader(false);
+  };
 
   return (
     <div className="video_watch m-m flex flex-row">
-      {chooseVideo !== "" ? (
-        <>
-          <div className="video_watch_left  mr-l">
-            <div className="video_player_react">
-              <ReactPlayer
-                url={`https://www.youtube.com/watch?v=${chooseVideo.videoId}`}
-                width="100%"
-                height="400px"
-                controls="true"
-              />
-            </div>
+      {isLoader ? <div className="loader"></div> : null}
+      <>
+        <div className="video_watch_left  mr-l">
+          <div className="video_player_react">
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${chooseVideo.videoId}`}
+              width="100%"
+              height="400px"
+              controls="true"
+              onReady={onloaded}
+            />
+          </div>
 
-            <div className="video_watch_details flex flex-row space-between align-item">
-              <div className="video_left_text width-100">
-                {chooseVideo.title}
-              </div>
-              <div className="width-100">Author:{chooseVideo.author}</div>
-              <div className="right_button_part flex flex-row space-between align-item">
-                {isUserLoggedIn ? (
-                  <>
-                    <button
-                      className={`btn btn-primary`}
-                      onClick={() => addWatchLaterHandler(chooseVideo)}
-                    >
-                      {chooseVideo.isWatchlist
-                        ? "Remove From Watch Later"
-                        : "Add To Watch Later"}
-                    </button>
-                    <i
-                      className={` fa fa-thumbs-up pointer ${
-                        chooseVideo.isLiked ? "text-warning" : ""
-                      } `}
-                      onClick={() => likeHandler(chooseVideo)}
-                    ></i>
-                    <i
-                      className="far fa-bookmark pointer"
-                      onClick={() => setSelectPlaylist((prev) => !prev)}
-                    ></i>
-                  </>
-                ) : null}
-              </div>
+          <div className="video_watch_details flex flex-row space-between align-item">
+            <div className="video_left_text width-100">{chooseVideo.title}</div>
+            <div className="width-100">Author:{chooseVideo.author}</div>
+            <div className="right_button_part flex flex-row space-between align-item">
+              {isUserLoggedIn ? (
+                <>
+                  <button
+                    className={`btn btn-primary`}
+                    onClick={() => addWatchLaterHandler(chooseVideo)}
+                  >
+                    {chooseVideo.isWatchlist
+                      ? "Remove From Watch Later"
+                      : "Add To Watch Later"}
+                  </button>
+                  <i
+                    className={` fa fa-thumbs-up pointer ${
+                      chooseVideo.isLiked ? "text-warning" : ""
+                    } `}
+                    onClick={() => likeHandler(chooseVideo)}
+                  ></i>
+                  <i
+                    className="far fa-bookmark pointer"
+                    onClick={() => setSelectPlaylist((prev) => !prev)}
+                  ></i>
+                </>
+              ) : null}
             </div>
           </div>
-          <div className="video_watch_right  mr-l">
-            <span className="f-m">Note Here Come</span>
-          </div>
-        </>
-      ) : (
-        <div className="loader"></div>
-      )}
+        </div>
+        <div className="video_watch_right  mr-l">
+          <span className="f-m">Notes</span>
+        </div>
+      </>
 
       {selectPlaylist ? (
         <PlaylistChoose

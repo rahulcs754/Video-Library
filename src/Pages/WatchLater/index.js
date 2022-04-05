@@ -26,10 +26,15 @@ export const WatchLater = () => {
       </div>
 
       <div className="flex flex-row m-m">
-        {watchlater !== 0 &&
+        {watchlater.length > 0 ? (
           watchlater.map((item, i) => {
             return <VideoCart {...item} key={i} />;
-          })}
+          })
+        ) : (
+          <div className="flex flex-row margin-auto">
+            <span className="f-m">You've not saved any video in this list</span>
+          </div>
+        )}
       </div>
     </>
   );

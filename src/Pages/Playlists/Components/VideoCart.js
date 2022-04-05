@@ -1,6 +1,7 @@
 import { usePlaylist } from "../../../Context";
 import { removeVideoFromPlaylist } from "../../../ApiService";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 export const VideoCart = ({
   _id,
   title,
@@ -29,11 +30,13 @@ export const VideoCart = ({
   };
   return (
     <div className="card card-overlay video_card">
-      <img
-        src={thumnailMedium.url}
-        className="card-image video_image"
-        alt="Card-Image"
-      />
+      <Link to={`/watch/${_id}`}>
+        <img
+          src={thumnailMedium.url}
+          className="card-image video_image"
+          alt="Card-Image"
+        />
+      </Link>
       <div className="card-header">
         <div className="card-title video_title space-between">
           <span className="text_ellipsis">{title}</span>

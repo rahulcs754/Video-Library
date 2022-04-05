@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuthData } from "../../Context/AuthContext";
 import { useState } from "react";
 import { Menu } from "./Menu";
@@ -18,15 +18,36 @@ export const Header = () => {
 
             <ul className="header-nav">
               <li>
-                <Link to="/"> Home </Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active_url" : "normal"
+                  }
+                  to="/"
+                >
+                  Home
+                </NavLink>
               </li>
 
               <li>
-                <Link to="/explore/all"> Explore </Link>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active_url" : "normal"
+                  }
+                  to="/explore/all"
+                >
+                  Explore
+                </NavLink>
               </li>
               {isUserLoggedIn ? (
                 <li>
-                  <Link to="/playlists">Playlist </Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active_url" : "normal"
+                    }
+                    to="/playlists"
+                  >
+                    Playlist
+                  </NavLink>
                 </li>
               ) : null}
               <li>

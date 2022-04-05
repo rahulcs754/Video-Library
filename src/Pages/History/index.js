@@ -1,6 +1,6 @@
 import { useHistory, useAuthData } from "../../Context";
 import { removeHistory, clearHistory } from "../../ApiService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 
@@ -48,16 +48,18 @@ export const History = () => {
       </div>
 
       <div className="flex flex-row m-m">
-        {history &&
+        {history.length > 0 ? (
           history.map((item) => {
             const { _id, title, thumnailMedium } = item;
             return (
               <div className="card card-overlay video_card" key={_id}>
-                <img
-                  src={thumnailMedium.url}
-                  className="card-image video_image"
-                  alt="Card-Image"
-                />
+                <Link to={`/watch/${_id}`}>
+                  <img
+                    src={thumnailMedium.url}
+                    className="card-image video_image"
+                    alt="Card-Image"
+                  />
+                </Link>
                 <div className="card-header">
                   <div className="card-title video_title space-between  align-item">
                     <span className="text_ellipsis">{title}</span>
@@ -69,7 +71,12 @@ export const History = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        ) : (
+          <div className="flex flex-row margin-auto">
+            <span className="f-m">You've seen 0 of our videos</span>
+          </div>
+        )}
       </div>
     </>
   );
