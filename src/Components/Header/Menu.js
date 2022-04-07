@@ -17,7 +17,7 @@ export const Menu = () => {
           <Link to="/liked">Liked Video</Link>
         </li>
         <li>
-          <Link to="#">History</Link>
+          <Link to="/History">History</Link>
         </li>
         <li>
           <Link to="/watchlater">Watch Later</Link>

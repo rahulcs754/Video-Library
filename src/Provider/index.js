@@ -4,6 +4,7 @@ import {
   WatchlistProvider,
   PlaylistProvider,
   LikedProvider,
+  HistoryProvider,
 } from "../Context";
 const AllProvider = ({ children }) => {
   return (
@@ -11,7 +12,9 @@ const AllProvider = ({ children }) => {
       <VideoProvider>
         <PlaylistProvider>
           <LikedProvider>
-            <WatchlistProvider>{children}</WatchlistProvider>
+            <WatchlistProvider>
+              <HistoryProvider>{children}</HistoryProvider>
+            </WatchlistProvider>
           </LikedProvider>
         </PlaylistProvider>
       </VideoProvider>

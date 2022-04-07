@@ -1,3 +1,13 @@
+:root {
+  --var-orange: #f5ab35;
+  --var-blue: #4183d7;
+}
+
+/* Active link */
+.active_url {
+  border-bottom: 1px solid var(--var-blue);
+}
+
 .banner_img {
   background-image: url(https://res.cloudinary.com/diyo6qdy1/image/upload/v1647981100/videolib/Finalpddev_uvxwl9.png);
   background-blend-mode: overlay;
@@ -18,6 +28,10 @@
   opacity: 0.9;
 }
 
+.banner_text {
+  background-color: var(--mint-white);
+  opacity: 0.7;
+}
 .section_heading {
   font-size: 1.2rem;
 }
@@ -231,11 +245,88 @@
   background-color: transparent;
 }
 
+/*single video page css*/
+
+.video_player_react div div iframe {
+  height: 27rem;
+}
+.video_watch_left {
+  height: inherit;
+  flex-basis: 50rem;
+}
+
+.video_watch_details {
+  margin-bottom: 0.5rem;
+}
+
+.video_watch_right {
+  flex-basis: 30rem;
+}
+
+.video_player_react {
+  height: 29.25rem;
+}
+
+.video_hz_card {
+  min-width: 35rem;
+}
+
+.video_left_text {
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+}
+
 .text_ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   padding: 0 0.1rem;
+}
+.right_button_part {
+  flex-basis: 30%;
+}
+.btn {
+  font-size: 0.8rem;
+}
+
+/* Loader css */
+
+.loader {
+  z-index: 2;
+  position: fixed;
+  top: 45%;
+  left: 0%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  place-items: center;
+  width: 0%;
+  height: 0%;
+  border-left: 1.875rem solid transparent;
+  border-right: 1.875rem solid transparent;
+  border-bottom: 1.875rem solid var(--var-blue);
+  border-top: 1.875rem solid var(--var-orange);
+  -webkit-animation: loader 1.2s ease-in-out infinite alternate;
+  animation: loader 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@-webkit-keyframes loader {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+  }
 }
 
 @media (max-width: 900px) {
@@ -248,13 +339,16 @@
   .rs-row {
     grid-template-columns: repeat(2, 1fr);
   }
+  .right_button_part {
+    flex-basis: 61%;
+  }
 
   .arrows {
     display: none;
   }
 
   .home_banner {
-    height: calc(33vh - 73px);
+    height: calc(57vh - 73px);
   }
 
   .section_box {

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 export const Banner = () => {
   return (
     <div className="home_banner banner_img">
-      <h1 className="f-xxl">WELCOME ESW</h1>
-      <p className="bg-warning f-l mb-s letter-space">
+      <h1 className="f-xxl ">WELCOME ESW</h1>
+      <p className="bg-warning f-l mb-s letter-space banner_text">
         Stuck with code ? Worry Not!
       </p>
-      <p className="bg-warning mb-s letter-space">
+      <p className="bg-warning mb-s letter-space banner_text">
         Solve all your problems at one place with this video library.
       </p>
       <Link className="btn btn-primary" to="/explore/all">

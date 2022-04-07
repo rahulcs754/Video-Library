@@ -26,10 +26,15 @@ export const Liked = () => {
       </div>
 
       <div className="flex flex-row m-m">
-        {liked &&
+        {liked.length > 0 ? (
           liked.map((item) => {
             return <VideoCart {...item} />;
-          })}
+          })
+        ) : (
+          <div className="flex flex-row margin-auto">
+            <span className="f-m">You've liked 0 of our videos</span>
+          </div>
+        )}
       </div>
     </>
   );

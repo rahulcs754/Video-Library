@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { addPlaylist } from "../../../ApiService";
 import { usePlaylist } from "../../../Context";
-
+import { toast } from "react-toastify";
 export const AddplaylistForm = ({ setViewInput }) => {
   const [playlistFormInput, setPlaylistFormInput] = useState({
     name: "",
@@ -29,15 +29,21 @@ export const AddplaylistForm = ({ setViewInput }) => {
       videos: [],
     };
 
-    const encodeToken = localStorage.getItem("encodedToken");
-    const { playlists, status } = await addPlaylist(newplaylist, encodeToken);
+    if (name !== "" && description !== "") {
+      const encodeToken = localStorage.getItem("encodedToken");
+      const { playlists, status } = await addPlaylist(newplaylist, encodeToken);
 
-    if (status === 201 || status === 200) {
-      playlistDispatch({
-        type: "ADD_PLAYLIST",
-        payload: playlists,
-      });
-      setViewInput((prev) => !prev);
+      if (status === 201 || status === 200) {
+        toast.success("Add video to the Custom Playlist List");
+
+        playlistDispatch({
+          type: "ADD_PLAYLIST",
+          payload: playlists,
+        });
+        setViewInput((prev) => !prev);
+      }
+    } else {
+      toast.warning("Please fill both fields");
     }
   };
 

@@ -7,7 +7,6 @@ export const PlaylistTitle = ({ _id, title }) => {
     const encodeToken = localStorage.getItem("encodedToken");
 
     const res = await removePlaylist(id, encodeToken);
-    console.log("remove data", res);
     playlistDispatch({ type: "REMOVE_PLAYLIST", payload: id });
   };
 

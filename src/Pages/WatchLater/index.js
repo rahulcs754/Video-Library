@@ -11,21 +11,30 @@ export const WatchLater = () => {
     watchLaterState: { watchlater },
   } = useWatchLater();
 
+  useEffect(() => {
+    if (isUserLoggedIn === false) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <>
       <div className="grid-container m-m">
         <div className="space-between">
-          <strong className="mr-m">
-            Watch later Videos: {watchlater.length}
-          </strong>
+          <strong className="mr-m">Watch Later: {watchlater.length}</strong>
         </div>
       </div>
 
       <div className="flex flex-row m-m">
-        {watchlater !== 0 &&
+        {watchlater.length > 0 ? (
           watchlater.map((item, i) => {
             return <VideoCart {...item} key={i} />;
-          })}
+          })
+        ) : (
+          <div className="flex flex-row margin-auto">
+            <span className="f-m">You've not saved any video in this list</span>
+          </div>
+        )}
       </div>
     </>
   );
