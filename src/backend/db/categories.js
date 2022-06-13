@@ -12,7 +12,7 @@ export const categories = [
     description: "",
     linkCategory: "/explore/javascript",
     image:
-      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986086/videolib/category/Js_1_tjztfc.png",
+      "https://res.cloudinary.com/rahulcs754/image/upload/v1647986086/videolib/category/Js_1_tjztfc.png",
   },
   {
     _id: uuid(),
@@ -20,7 +20,7 @@ export const categories = [
     description: "",
     linkCategory: "/explore/node",
     image:
-      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986093/videolib/category/node_1_ihy3ql.png",
+      "https://res.cloudinary.com/rahulcs754/image/upload/v1647986093/videolib/category/node_1_ihy3ql.png",
   },
   {
     _id: uuid(),
@@ -28,7 +28,7 @@ export const categories = [
     description: "",
     linkCategory: "/explore/python",
     image:
-      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647986094/videolib/category/python_1_oa0pmw.png",
+      "https://res.cloudinary.com/rahulcs754/image/upload/v1647986094/videolib/category/python_1_oa0pmw.png",
   },
   {
     _id: uuid(),
@@ -36,6 +36,6 @@ export const categories = [
     description: "",
     linkCategory: "/explore/react",
     image:
-      "https://res.cloudinary.com/diyo6qdy1/image/upload/v1648878781/videolib/category/react_2_ouunfv.png",
+      "https://res.cloudinary.com/rahulcs754/image/upload/v1648878781/videolib/category/react_2_ouunfv.png",
   },
 ];
