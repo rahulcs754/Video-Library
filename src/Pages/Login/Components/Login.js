@@ -8,15 +8,19 @@ import { toast } from "react-toastify";
 const LoginForm = () => {
   const navigate = useNavigate();
 
+  const { userAuth, DispatchUserAuth } = useAuthData();
+  const { isUserLoggedIn } = userAuth;
+
+  if (isUserLoggedIn) {
+    navigate("/explore/all");
+  }
+
   const [login, setLogin] = useState({
     email: "",
     password: "",
     viewPassword: false,
     error: "",
   });
-
-  //Auth Context
-  const { DispatchUserAuth } = useAuthData();
 
   // destructure login variable
   const { email, password, viewPassword, error } = login;

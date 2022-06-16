@@ -2,8 +2,16 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuthData } from "../../../Context";
 const SignupForm = () => {
+  const { userAuth } = useAuthData();
+  const { isUserLoggedIn } = userAuth;
   const navigate = useNavigate();
+
+  if (isUserLoggedIn) {
+    navigate("/explore/all");
+  }
+
   const [signupForm, setSignupForm] = useState({
     firstname: "",
     lastname: "",
@@ -41,18 +49,18 @@ const SignupForm = () => {
   } = signupForm;
 
   //submit handler
-  const submitHandler = async e => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    setSignupForm(prev => ({ ...prev, loading: true }));
+    setSignupForm((prev) => ({ ...prev, loading: true }));
     const { password, confirmPassword } = signupForm;
     if (password === confirmPassword) {
-      setSignupForm(prev => ({
+      setSignupForm((prev) => ({
         ...prev,
         loading: false,
         errors: {},
       }));
     } else {
-      setSignupForm(prev => ({
+      setSignupForm((prev) => ({
         ...prev,
         loading: false,
         errors: {
@@ -64,7 +72,7 @@ const SignupForm = () => {
 
     const countError = Object.keys(signupForm.errors).length;
     if (countError === 0 && signupForm.accept === "on") {
-      setSignupForm(prev => ({
+      setSignupForm((prev) => ({
         ...prev,
         submitted: true,
         loading: false,
@@ -83,19 +91,19 @@ const SignupForm = () => {
           localStorage.setItem("token", response.data.encodedToken);
           setTimeout(() => navigate("/login"), 3000);
 
-          setSignupForm(prev => ({
+          setSignupForm((prev) => ({
             ...prev,
             isValid: true,
           }));
         } else if (response.status === 500) {
-          setSignupForm(prev => ({
+          setSignupForm((prev) => ({
             ...prev,
             loading: false,
             formErrors: "Login Credential wrong",
             isValid: false,
           }));
         } else if (response.status === 422) {
-          setSignupForm(prev => ({
+          setSignupForm((prev) => ({
             ...prev,
             loading: false,
             formErrors: "User Already Exits",
@@ -103,14 +111,14 @@ const SignupForm = () => {
           }));
         }
       } catch (error) {
-        setSignupForm(prev => ({
+        setSignupForm((prev) => ({
           ...prev,
           loading: false,
           formErrors: error,
         }));
       }
     } else {
-      setSignupForm(prev => ({
+      setSignupForm((prev) => ({
         ...prev,
         submitted: false,
         loading: false,
@@ -119,9 +127,9 @@ const SignupForm = () => {
   };
 
   //change handler for controlled input
-  const changeHandler = e => {
+  const changeHandler = (e) => {
     const { name, value } = e.target;
-    setSignupForm(prev => ({ ...prev, [name]: value }));
+    setSignupForm((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -184,7 +192,7 @@ const SignupForm = () => {
             <div
               className="error-icon"
               onClick={() =>
-                setpasswordView(prev => ({
+                setpasswordView((prev) => ({
                   ...prev,
                   passwordshow: !prev.passwordshow,
                 }))
@@ -206,7 +214,7 @@ const SignupForm = () => {
             <div
               className="error-icon"
               onClick={() =>
-                setpasswordView(prev => ({
+                setpasswordView((prev) => ({
                   ...prev,
                   confirmPasswordshow: !prev.confirmPasswordshow,
                 }))

@@ -11,7 +11,6 @@ import {
   SingleVideo,
 } from "../Pages";
 import MockAPI from "../mock-api";
-
 import { Routes, Route } from "react-router-dom";
 
 const Routespaths = () => {
