@@ -20,7 +20,8 @@ const VideoProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get("/api/videos");
-      VideoDispatch({ type: "ADD_VIDEO_LIST", payload: data.videos });
+
+      VideoDispatch({ type: "ADD_VIDEO_LIST", payload: data?.videos });
 
       const getCategory = await axios.get("/api/categories");
       VideoDispatch({

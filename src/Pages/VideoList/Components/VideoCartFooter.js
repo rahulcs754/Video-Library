@@ -93,7 +93,7 @@ export const VideoCartFooter = (videoDetails) => {
           ></i>
 
           <i
-            className="far fa-bookmark pointer"
+            className="far fa-list pointer"
             onClick={() => setSelectPlaylist((prev) => !prev)}
           ></i>
         </>

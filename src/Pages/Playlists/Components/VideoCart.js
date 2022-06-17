@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export const VideoCart = ({
   _id,
   title,
+  videoId,
   author,
   thumnailMedium,
   playlistId,
@@ -30,7 +31,7 @@ export const VideoCart = ({
   };
   return (
     <div className="card card-overlay video_card">
-      <Link to={`/watch/${_id}`}>
+      <Link to={`/watch/${videoId}`}>
         <img
           src={thumnailMedium.url}
           className="card-image video_image"

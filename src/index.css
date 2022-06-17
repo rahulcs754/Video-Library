@@ -252,7 +252,7 @@
 }
 .video_watch_left {
   height: inherit;
-  flex-basis: 50rem;
+  flex-basis: 100%;
 }
 
 .video_watch_details {
@@ -260,7 +260,7 @@
 }
 
 .video_watch_right {
-  flex-basis: 30rem;
+  flex-basis: 100%;
 }
 
 .video_player_react {

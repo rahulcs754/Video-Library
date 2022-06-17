@@ -50,10 +50,10 @@ export const History = () => {
       <div className="flex flex-row m-m">
         {history.length > 0 ? (
           history.map((item) => {
-            const { _id, title, thumnailMedium } = item;
+            const { _id, title, videoId, thumnailMedium } = item;
             return (
               <div className="card card-overlay video_card" key={_id}>
-                <Link to={`/watch/${_id}`}>
+                <Link to={`/watch/${videoId}`}>
                   <img
                     src={thumnailMedium.url}
                     className="card-image video_image"

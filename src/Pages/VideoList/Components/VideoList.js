@@ -11,7 +11,7 @@ export const VideoList = () => {
   const navigate = useNavigate();
 
   const addHistoryHandler = async (item) => {
-    navigate(`/watch/${item._id}`);
+    navigate(`/watch/${item.videoId}`);
     const encodeToken = localStorage.getItem("encodedToken");
 
     const { history, status } = await addHistory(item, encodeToken);

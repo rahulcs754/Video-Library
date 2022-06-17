@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   useAuthData,
   useVideo,
@@ -16,6 +16,7 @@ import { toast } from "react-toastify";
 export const SingleVideo = () => {
   const [isLoader, setLoader] = useState(true);
   const [selectPlaylist, setSelectPlaylist] = useState(false);
+  const [playVideo, setPlayVideo] = useState({});
   const {
     userAuth: { isUserLoggedIn },
   } = useAuthData();
@@ -27,8 +28,14 @@ export const SingleVideo = () => {
 
   const { videoid } = useParams();
   const { VideoState } = useVideo();
-  const { data: ListOFVideo } = VideoState;
-  const chooseVideo = ListOFVideo?.find((item) => item._id === videoid);
+  const { data } = VideoState;
+  useEffect(() => {
+    const chooseVideo = data.find((item) => item?.videoId === videoid);
+    console.log(data, videoid, chooseVideo);
+    if (chooseVideo) {
+      setPlayVideo(chooseVideo);
+    }
+  }, [data]);
 
   //add video watchlater list
   const addWatchLaterHandler = async (videoDetails) => {
@@ -83,7 +90,7 @@ export const SingleVideo = () => {
 
   // add video to history page
   const addHistoryHandler = async (item) => {
-    navigate(`/watch/${item._id}`);
+    navigate(`/watch/${item.videoId}`);
     const encodeToken = localStorage.getItem("encodedToken");
 
     const { history, status } = await addHistory(item, encodeToken);
@@ -103,7 +110,7 @@ export const SingleVideo = () => {
         <div className="video_watch_left  mr-l">
           <div className="video_player_react">
             <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${chooseVideo.videoId}`}
+              url={`https://www.youtube.com/watch?v=${playVideo.videoId}`}
               width="100%"
               height="400px"
               controls="true"
@@ -112,27 +119,27 @@ export const SingleVideo = () => {
           </div>
 
           <div className="video_watch_details flex flex-row space-between align-item">
-            <div className="video_left_text width-100">{chooseVideo.title}</div>
-            <div className="width-100">Author:{chooseVideo.author}</div>
+            <div className="video_left_text width-100">{playVideo.title}</div>
+            <div className="width-100">Author:{playVideo.author}</div>
             <div className="right_button_part flex flex-row space-between align-item">
               {isUserLoggedIn ? (
                 <>
                   <button
                     className={`btn btn-primary`}
-                    onClick={() => addWatchLaterHandler(chooseVideo)}
+                    onClick={() => addWatchLaterHandler(playVideo)}
                   >
-                    {chooseVideo.isWatchlist
+                    {playVideo.isWatchlist
                       ? "Remove From Watch Later"
                       : "Add To Watch Later"}
                   </button>
                   <i
                     className={` fa fa-thumbs-up pointer ${
-                      chooseVideo.isLiked ? "text-warning" : ""
+                      playVideo.isLiked ? "text-warning" : ""
                     } `}
-                    onClick={() => likeHandler(chooseVideo)}
+                    onClick={() => likeHandler(playVideo)}
                   ></i>
                   <i
-                    className="far fa-bookmark pointer"
+                    className="far fa-list pointer"
                     onClick={() => setSelectPlaylist((prev) => !prev)}
                   ></i>
                 </>
@@ -141,14 +148,14 @@ export const SingleVideo = () => {
           </div>
         </div>
         <div className="video_watch_right  mr-l">
-          <span className="f-m">Notes</span>
+          <span className="f-m"></span>
         </div>
       </>
 
       {selectPlaylist ? (
         <PlaylistChoose
           setView={setSelectPlaylist}
-          videoIdNumber={chooseVideo._id}
+          videoIdNumber={playVideo._id}
         />
       ) : null}
     </div>

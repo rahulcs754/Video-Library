@@ -2,7 +2,7 @@ import { removeFromLikes } from "../../ApiService/Liked";
 import { useLike, useVideo } from "../../Context";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-export const VideoCart = ({ _id, title, thumnailMedium }) => {
+export const VideoCart = ({ _id, title, videoId, thumnailMedium }) => {
   const { VideoDispatch } = useVideo();
   const { LikeDispatch } = useLike();
 
@@ -28,7 +28,7 @@ export const VideoCart = ({ _id, title, thumnailMedium }) => {
 
   return (
     <div className="card card-overlay video_card">
-      <Link to={`/watch/${_id}`}>
+      <Link to={`/watch/${videoId}`}>
         <img
           src={thumnailMedium.url}
           className="card-image video_image"
